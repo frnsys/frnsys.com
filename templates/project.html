@@ -1,0 +1,14 @@
+{% extends 'layout.html' %}
+{% block content %}
+    <a href="/" class="go-home"><- home</a>
+    <div class="project">
+        <h1>{{ meta.name }}</h1>
+        <p>{{ meta.desc }}</p>
+        <ul class="resources">
+            {% for resource in meta.resources %}
+                <li>{{ resource }}</li>
+            {% endfor %}
+        </ul>
+        {{ html }}
+    </div>
+{% endblock %}

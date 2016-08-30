@@ -1,0 +1,234 @@
+@import url(https://fonts.googleapis.com/css?family=Work+Sans:400,400i);
+
+::-moz-selection { background: #0ea2d1; color: #fff; text-shadow: none; }
+::selection { background: #0ea2d1; color: #fff; text-shadow: none; }
+
+* {
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+img {
+  vertical-align: middle;
+  border: 0;
+  max-width: 100%;
+}
+
+ul, figure {
+  margin: 0;
+  padding: 0;
+}
+
+hr {
+  margin: 3em 0;
+  border: none;
+  height: 4px;
+  background: #cecece;
+}
+
+blockquote {
+  margin: 0;
+  padding: 1em;
+  border-left: 6px solid #000;
+  color: #000;
+}
+
+a, a:visited {
+  color: #777;
+}
+a:hover {
+  color: #222;
+}
+
+html, body {
+  background: #e3e3e3;
+  color: #222;
+  margin: 0;
+  padding: 4em 0;
+  font-family: "Work Sans", "Helvetica", "Arial", "sans-serif";
+}
+
+main {
+  padding-bottom: 6em;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.brand {
+  cursor: help;
+  width: 180px;
+}
+
+header.primary {
+  padding: 3em 2em 4em 2em;
+}
+header.primary h1 {
+  font-size: 2em;
+  margin: 1em 0 0.1em 0;
+  font-weight: normal;
+}
+
+.subtitle {
+  font-size: 1.2em;
+  display: block;
+  color: rgba(0, 0, 0, 0.3);
+}
+
+.links {
+  line-height: 2;
+}
+.links li {
+  display: inline;
+  margin: 0 2em 0 0;
+}
+
+.social-media {
+  font-size: 1.2em;
+  vertical-align: middle;
+}
+
+
+
+.meta {
+  padding: 1.5em 0 1em 0;
+  max-width: 760px;
+  font-size: 1.2em;
+  line-height: 1.5;
+}
+.meta li {
+  margin: 0.5em 0 1em 0;
+}
+
+.projects li {
+  margin: 0 0 1em 0;
+  max-width: 800px;
+  padding: 2em;
+  overflow: hidden;
+  height: 740px;
+  float: left;
+  width: 33.333%;
+}
+
+.project-hero {
+  box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.2);
+  width: 100%;
+}
+.project-hero img {
+  width: 100%;
+}
+
+.project-title {
+  font-family: "Arimo", "Helvetica", "Arial", "sans-serif";
+  font-size: 2em;
+  padding: 0 0 0.25em 0;
+  display: inline-block;
+  color: #777;
+  line-height: 1.2;
+  text-decoration: none;
+}
+
+.project-tags {
+  color: rgba(0, 0, 0, 0.3);
+}
+
+.project-info {
+  padding: 2em 0;
+  width: 100%;
+}
+.project-info p {
+  line-height: 1.4;
+  color: #252525;
+  font-size: 1.1em;
+}
+
+.project {
+  font-size: 1.2em;
+}
+.project h1 {
+  font-size: 6em;
+  font-weight: normal;
+}
+.project h2 {
+  font-size: 1.7em;
+  margin-top: 2em;
+}
+.project p {
+  line-height: 1.4;
+}
+.project figure,
+.project img {
+  margin: 3em auto;
+  display: block;
+}
+.project figure img {
+  margin: 0 auto;
+}
+.project figcaption {
+  font-style: italic;
+  padding: 1em 3em;
+  color: rgba(0, 0, 0, 0.5);
+}
+.project .resources {
+  margin-bottom: 6em;
+}
+
+a.go-home {
+  position: absolute;
+  top: 2em;
+  text-decoration: none;
+  color: #333;
+}
+
+/* Thanks to: http://amobil.se/2011/11/responsive-embeds/ */
+.video--embed {
+  position: relative;
+  padding-bottom: 56.25%; // 16/9 ratio
+  height: 0;
+
+  /* hide video blurb */
+  p display:none;
+}
+
+.video--embed iframe,
+.video--embed object,
+.video--embed embed {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+
+@media only screen and (max-width: 960px) {
+  html, body {
+    padding: 2em 1em;
+  }
+
+  .project-hero,
+  .project-info {
+    width: 100%;
+    float: none;
+    max-width: 460px;
+    margin: 0 auto;
+  }
+
+  .projects li {
+    height: 740px;
+    width: 50%;o
+  }
+}
+
+@media only screen and (max-width: 640px) {
+  .projects li {
+    width: 100%;
+    margin: 0 auto 1em auto;
+    display: block;
+    height: auto;
+    float: none;
+  }
+  .project h1 {
+    font-size: 4em;
+  }
+}

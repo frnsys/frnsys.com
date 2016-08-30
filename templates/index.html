@@ -1,0 +1,36 @@
+{% extends 'layout.html' %}
+{% block content %}
+    <header class="primary">
+        <img src="/assets/brand.gif" title="INTERESTING" alt="INTERESTING" class="brand">
+        <h1>Francis Tseng</h1>
+        <div class="subtitle">design, data, machine learning</div>
+        <ul class="meta">
+            <li><em>currently</em>: developing a <a href="http://thefounder.biz">dystopian business/start-up simulator</a></li>
+            <li><em>upcoming</em>: IdeasCity Athens, NEW INC to work on social simulation</li>
+            <li><em>previously</em>: DBRS Labs Researcher-in-Residence, 2015 Knight-Mozilla <a href="http://opennews.org/what/fellowships/2015meet/">OpenNews Fellow</a> at The New York Times/Washington Post/<a href="http://coralproject.net/">The Coral Project</a>, visiting faculty at the New School's Design+Journalism program (Fall 2014, Fall 2015), IDEO, Knight Foundation grantee</li>
+        </ul>
+        <ul class="links">
+            <li><a href="http://spaceandtim.es">writing</a></li>
+            <li><a href="http://publicscience.co">public science</a></li>
+            <li><a href="https://www.are.na/francis-tseng">are.na</a></li>
+            <li><a href="https://twitter.com/frnsys">twitter</a></li>
+            <li><a href="https://github.com/frnsys/">github</a></li>
+        </ul>
+    </header>
+    <ul class="projects">
+        {% for project in projects %}
+            <li>
+                <figure class="project-hero">
+                    <a href="{{ project.url }}"><img src="/assets/projects/{{ project.img }}" alt="{{ project.name }}"></a>
+                </figure>
+                <div class="project-info">
+                    <div class="project-meta">
+                        <a class="project-title" href="{{ project.url }}">{{ project.name }}</a>
+                    </div>
+                    <span class="project-tags">{{ project.tags }}</span>
+                    <p>{{ project.desc }}</p>
+                </div>
+            </li>
+        {% endfor %}
+    </div>
+{% endblock %}

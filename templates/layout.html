@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+    {% set site_name = 'francis tseng' %}
+    {% set site_desc = 'francis tseng' %}
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta property="og:url" content="http://frnsys.com">
+    <meta property="og:site_name" content="{{ site_name }}">
+    <title>{{ site_name }}</title>
+    {% block meta %}
+        <meta property="og:type" content="website">
+        <meta property="og:description" content="{{ site_desc }}">
+        <meta property="og:title" content="{{ site_name }}">
+        <meta name="twitter:card" content="summary">
+        <meta name="twitter:title" content="{{ site_name }}">
+        <meta name="twitter:description" content="{{ site_desc }}">
+    {% endblock %}
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+</head>
+<body>
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+</body>
+</html>
