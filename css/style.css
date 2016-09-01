@@ -119,7 +119,7 @@ header.primary h1 {
 }
 
 .project-title {
-  font-family: "Arimo", "Helvetica", "Arial", "sans-serif";
+  font-family: "Work Sans", "Helvetica", "Arial", "sans-serif";
   font-size: 2em;
   padding: 0 0 0.25em 0;
   display: inline-block;
@@ -163,6 +163,9 @@ header.primary h1 {
 }
 .project figure img {
   margin: 0 auto;
+}
+.project img {
+  box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.2);
 }
 .project figcaption {
   font-style: italic;
