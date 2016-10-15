@@ -1,0 +1,20 @@
+- name: Speculating Futures
+  tags: syllabus
+  desc: A proposed syllabus for a class around speculative fiction, technology, and politics
+  url: https://github.com/frnsys/speculating_futures
+  img: speculating_futures.jpg
+- name: The Infinite CCG
+  tags: game
+  desc: A digital card game which generates infinite cards to play with
+  url: https://github.com/frnsys/cards
+  img: infinite_ccg.png
+- name: Stratagem
+  tags: game
+  desc: A strategic card game based on the standard 52-card deck
+  url: https://github.com/frnsys/stratagem
+  img: stratagem.png
+- name: Geiger
+  tags: nlp
+  desc: Get a sense of the comments from a safe distance
+  url: https://github.com/frnsys/geiger/blob/master/proposal/proposal.md
+  img: geiger.jpg

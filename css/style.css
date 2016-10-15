@@ -25,6 +25,7 @@ hr {
   border: none;
   height: 4px;
   background: #cecece;
+  clear: both;
 }
 
 blockquote {
@@ -105,7 +106,7 @@ header.primary h1 {
   max-width: 800px;
   padding: 2em;
   overflow: hidden;
-  height: 740px;
+  height: 660px;
   float: left;
   width: 33.333%;
 }

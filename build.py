@@ -69,8 +69,10 @@ if __name__ == '__main__':
 
     # index page
     templ = env.get_template('index.html')
+    meta = yaml.load(open('meta.yaml', 'r'))
     projects = yaml.load(open('projects.yaml', 'r'))
-    html = templ.render(projects=projects)
+    stalled = yaml.load(open('stalled.yaml', 'r'))
+    html = templ.render(projects=projects, stalled=stalled, meta=meta)
     with open(os.path.join(BUILD_DIR, 'index.html'), 'w') as f:
         f.write(html)
 
