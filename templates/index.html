@@ -1,29 +1,22 @@
 {% macro project(p) -%}
-    <li>
-        <figure class="project-hero">
-            <a href="{{ p.url }}"><img src="/assets/projects/{{ p.img }}" alt="{{ p.name }}"></a>
-        </figure>
-        <div class="project-info">
-            <div class="project-meta">
-                <a class="project-title" href="{{ p.url }}">{{ p.name }}</a>
-            </div>
-            <span class="project-tags">{{ p.tags }}</span>
-            <p>{{ p.desc }}</p>
-        </div>
+    <li class="project">
+        <a href="{{ p.url }}">
+            <figure>
+                <img src="/assets/projects/{{ p.img }}" alt="{{ p.name }}">
+            </figure>
+        </a>
+        <h1><a href="{{ p.url }}">{{ p.name }}</a></h1>
+        <h2>{{ p.tags }}</h2>
+        <p>{{ p.desc }}</p>
     </li>
 {%- endmacro %}
 
 {% extends 'layout.html' %}
 {% block content %}
-    <header class="primary">
-        <img src="/assets/brand.gif" title="INTERESTING" alt="INTERESTING" class="brand">
+    <header>
+        <img src="/assets/brand.gif" class="brand">
         <h1>Francis Tseng</h1>
-        <div class="subtitle">design, data, machine learning</div>
-        <ul class="meta">
-            <li><em>currently</em>: {{ meta.currently|safe }}</li>
-            <li><em>upcoming</em>: {{ meta.upcoming|safe }}</li>
-            <li><em>previously</em>: {{ meta.previously|safe }}</li>
-        </ul>
+        <h2>design # dev # data</h2>
         <ul class="links">
             <li><a href="http://spaceandtim.es">writing</a></li>
             <li><a href="http://publicscience.co">public science</a></li>
@@ -32,17 +25,25 @@
             <li><a href="https://github.com/frnsys/">github</a></li>
         </ul>
     </header>
+    <ul class="meta">
+        <li><em>previously</em>: {{ meta.previously|safe }}</li>
+        <li><em>currently</em>: {{ meta.currently|safe }}</li>
+        <li><em>upcoming</em>: {{ meta.upcoming|safe }}</li>
+    </ul>
     <ul class="projects">
         {% for p in projects %}
             {{ project(p) }}
         {% endfor %}
     </ul>
 
-    <hr />
     <h1>Stalled & Unfinished</h1>
     <ul class="projects">
         {% for p in stalled %}
             {{ project(p) }}
         {% endfor %}
     </ul>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/svg.js/2.4.0/svg.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/svg.filter.js/2.0.2/svg.filter.min.js"></script>
+    <script src="/js/main.js"></script>
 {% endblock %}

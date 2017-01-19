@@ -1,0 +1,63 @@
+@import url(https://fonts.googleapis.com/css?family=Work+Sans:400,400i);
+
+html, body {
+  background: #e3e3e3;
+}
+
+a, a:visited {
+  color: #777;
+}
+a:hover {
+  color: #222;
+}
+
+.project-single {
+  font-size: 1.2em;
+  text-align: left;
+  max-width: 960px;
+  margin: 8em auto 12em auto;
+  font-family: "Work Sans", "Helvetica", "Arial", "sans-serif";
+}
+.project-single li {
+  list-style-type: disc;
+}
+.project-single h1 {
+  font-size: 6em;
+  font-weight: normal;
+  text-align: left;
+  color: #222;
+}
+.project-single h2 {
+  font-size: 1.7em;
+  margin-top: 2em;
+}
+.project-single p {
+  line-height: 1.4;
+}
+.project-single figure,
+.project-single img {
+  margin: 3em auto;
+  display: block;
+}
+.project-single figure img {
+  margin: 0 auto;
+}
+.project-single img {
+  box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.2);
+}
+.project-single figcaption {
+  font-style: italic;
+  padding: 1em 3em;
+  color: rgba(0, 0, 0, 0.5);
+}
+.project-single .resources {
+  margin-bottom: 6em;
+}
+
+a.go-home {
+  position: absolute;
+  top: 2em;
+  text-decoration: none;
+  color: #333;
+  font-size: 0.8em;
+}
