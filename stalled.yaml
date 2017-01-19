@@ -1,8 +1,3 @@
-- name: Speculating Futures
-  tags: syllabus
-  desc: A proposed syllabus for a class around speculative fiction, technology, and politics
-  url: https://github.com/frnsys/speculating_futures
-  img: speculating_futures.jpg
 - name: The Infinite CCG
   tags: game
   desc: A digital card game which generates infinite cards to play with

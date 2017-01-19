@@ -1,3 +1,8 @@
+- name: Speculating Futures
+  tags: reading list
+  desc: A reading list around speculative fiction, technology, and politics
+  url: http://speculatingfutures.club
+  img: speculating_futures.png
 - name: Humans of Simulated New York
   tags: simulation
   desc: A participative agent-based economic simulation for speculating alternative economies
