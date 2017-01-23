@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Work+Sans:400,400i);
+@import url('https://fonts.googleapis.com/css?family=Cousine:400,400i');
 
 ::-moz-selection { background: #0ea2d1; color: #fff; text-shadow: none; }
 ::selection { background: #0ea2d1; color: #fff; text-shadow: none; }
@@ -9,200 +9,104 @@
 	box-sizing: border-box;
 }
 
-img {
-  vertical-align: middle;
-  border: 0;
-  max-width: 100%;
-}
-
-ul, figure {
+html, body {
+  background: #FFAFAF;
   margin: 0;
   padding: 0;
+  text-align: center;
+  font-family: 'Cousine', monospace;
+}
+
+h1, h1 a {
+  color: #184580;
+  font-weight: normal;
+  font-size: 1em;
+  text-align: center;
+  text-decoration: none;
+}
+h2 {
+  font-size: 0.9em;
+  font-weight: normal;
+  text-align: center;
+  color: rgba(0,0,0,0.4);
+}
+.projects {
+  vertical-align: top;
+  margin: 6em 0 0 0;
+  font-size: 0.9em;
+}
+.project {
+  display: inline-block;
+  max-width: 400px;
+  margin: 0em 6em 20em;
+}
+.project p {
+  padding: 0 4em;
+  text-align: left;
+}
+.project figure {
+  width: 100%;
+  position: relative;
+  margin: 0 0 1em 0;
+}
+.project figure img {
+  width: 100%;
+  visibility: hidden;
+}
+.project figure svg {
+  position: absolute;
+  left: 0;
+  top: -2px;
+}
+
+header {
+  padding: 2em 2em 6em 2em;
+  font-size: 0.9em;
+}
+.brand {
+  width: 140px;
+}
+
+ul, li {;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+.links li {
+  display: inline-block;
+  font-size: 0.9em;
+  margin: 0 0.5em;
+}
+
+a, a:visited {
+  color: #dc3636;
+}
+a:hover {
+  color: #f50a0a;
 }
 
 hr {
   margin: 3em 0;
   border: none;
   height: 4px;
-  background: #f8f8f8;
+  background: #cecece;
   clear: both;
 }
 
-blockquote {
-  margin: 0;
-  padding: 1em;
-  border-left: 6px solid #000;
-  color: #000;
+img {
+  max-width: 100%;
 }
 
-a, a:visited {
-  color: #777;
-}
-a:hover {
-  color: #222;
-}
-
-html, body {
-  background: #FFAFAF;
-  color: #222;
-  margin: 0;
-  padding: 4em 0;
-  font-family: "Work Sans", "Helvetica", "Arial", "sans-serif";
-}
-
-main {
-  padding-bottom: 6em;
-  max-width: 960px;
-  margin: 0 auto;
-}
-
-.brand {
-  cursor: help;
-  width: 180px;
-}
-
-header.primary {
-  padding: 3em 2em 4em 2em;
-}
-header.primary h1 {
-  font-size: 2em;
-  margin: 1em 0 0.1em 0;
-  font-weight: normal;
-}
-
-.subtitle {
-  font-size: 1.2em;
-  display: block;
-  color: rgba(0, 0, 0, 0.3);
-}
-
-.links {
-  line-height: 2;
-}
-.links li {
-  display: inline;
-  margin: 0 2em 0 0;
-}
-
-.social-media {
-  font-size: 1.2em;
-  vertical-align: middle;
-}
-
-
-
-.meta {
-  padding: 1.5em 0 1em 1em;
-  font-size: 1.2em;
-  line-height: 1.5;
-}
 .meta li {
-  margin: 0.5em 0 1em 0;
-}
-
-.projects {
-  text-align: center;
-}
-
-.projects li {
-  margin: 0 0 1em 0;
-  padding: 1em;
   display: inline-block;
+  width: 30%;
   text-align: left;
-}
-
-.project-hero {
-  float: left;
-  margin-right: 1em;
-  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
-}
-.project-hero img {
-  width: 200px;
-}
-
-.project-title {
-  font-family: "Work Sans", "Helvetica", "Arial", "sans-serif";
-  font-size: 1.4em;
-  padding: 0 0 0.25em 0;
-  display: inline-block;
-  color: #777;
-  line-height: 1.2;
-  text-decoration: none;
-}
-
-.project-tags {
-  color: rgba(0, 0, 0, 0.3);
-}
-
-.project-info {
-  display: inline-block;
   vertical-align: top;
-  font-size: 0.9em;
-  max-width: 220px;
+  padding-right: 1.5%;
 }
-.project-info p {
-  line-height: 1.4;
-  color: #252525;
-  font-size: 1.1em;
+.meta li:last-child {
+  padding-right: 0;
 }
-
-.project {
-  font-size: 1.2em;
-}
-.project h1 {
-  font-size: 6em;
-  font-weight: normal;
-}
-.project h2 {
-  font-size: 1.7em;
-  margin-top: 2em;
-}
-.project p {
-  line-height: 1.4;
-}
-.project figure,
-.project img {
-  margin: 3em auto;
-  display: block;
-}
-.project figure img {
-  margin: 0 auto;
-}
-.project img {
-  box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.2);
-}
-.project figcaption {
-  font-style: italic;
-  padding: 1em 3em;
-  color: rgba(0, 0, 0, 0.5);
-}
-.project .resources {
-  margin-bottom: 6em;
-}
-
-a.go-home {
-  position: absolute;
-  top: 2em;
-  text-decoration: none;
-  color: #333;
-}
-
-/* Thanks to: http://amobil.se/2011/11/responsive-embeds/ */
-.video--embed {
-  position: relative;
-  padding-bottom: 56.25%; // 16/9 ratio
-  height: 0;
-
-  /* hide video blurb */
-  p display:none;
-}
-
-.video--embed iframe,
-.video--embed object,
-.video--embed embed {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+.meta em {
+  color: #dc3636;
 }

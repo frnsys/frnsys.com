@@ -77,7 +77,7 @@ if __name__ == '__main__':
         f.write(html)
 
     # assets etc
-    for d in ['assets', 'css', 'favicon.ico']:
+    for d in ['assets', 'css', 'js', 'favicon.ico']:
         if os.path.isdir(d):
             shutil.copytree(d, '.build/{}'.format(d))
         else:
