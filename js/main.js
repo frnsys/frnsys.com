@@ -1,36 +1,55 @@
+// important note:
+// the pivot of a blob part is its upper-left corner, _not_ its center
+
 // max distance from centers
 const maxDist = {x: 80, y: 150}
 
 // how bunched up circles are to
 // the image center at start
 const closenessToCenter = {x: 1.5, y: 1}
-const n_circles = 3
+const n_circles = 5
 const padding = 10
 const shadowOffset = {x: 6, y: 6}
-const radiusRange = [60,120]
+const radiusRange = [60,100]
 const velDamp = {x: 40, y: 40}
 const gooeyness = 20;
 const bounceStrength = 0.5
+const onHover = 'reveal' // 'reveal' or 'follow'
 
 // get a random number in [-r, r]
 function randRange(r) {
     return (Math.random() * r * 2) - r
 }
 
+// keep a value within a range [mn, mx]
+function clamp(v, mn, mx) {
+  return Math.max(Math.min(v, mx), mn)
+}
 
 class BlobImage {
   constructor(el) {
+    // compute some dimension stuff from the element
     this.el = el
     this.height = this.el.clientHeight
     this.width = this.el.clientWidth
+    this.center = {x: this.width/2, y: this.height/2}
+
+    // setup the SVG
     this.svg = SVG(el).size(this.width, this.height)
+
+    // create an SVG element of the image
     this.imageEl = this.el.getElementsByTagName('img')[0]
     this.imageSrc = this.imageEl.src
     this.image = this.svg.image(this.imageSrc, this.width, this.height)
-    this.group = this.svg.group()
-    this.shadow = this.svg.group()
-    this.center = {x: this.width/2, y: this.height/2}
 
+
+    // the masking blob parts go here
+    this.group = this.svg.group()
+
+    // the shadow blob parts go here
+    this.shadow = this.svg.group()
+
+    // create the blob parts
     this.blobParts = []
     for (var i=0; i<n_circles; i++) {
       var blobPart = this.makeBlobPart()
@@ -54,29 +73,53 @@ class BlobImage {
 
     var self = this
     this.hovered = false
-    this.el.addEventListener('mouseenter', function() {
-      var r = Math.max(self.height, self.width)/2
-      self.hovered = true
-      self.blobParts.map(function(bp) {
-        bp.circle.stop(false, true)
-        bp.circle.animate(200).radius(r).during(function() {
-          self.image.maskWith(self.group)
-        }).after(function() {
-          self.imageEl.style.visibility = 'visible'
-        });
+    if (onHover === 'reveal') {
+      // on enter, expand blob parts to cover the entire image
+      // as a fallback, set the original html img to visible
+      this.el.addEventListener('mouseenter', function() {
+        var r = Math.max(self.height, self.width)/2
+        self.hovered = true
+        self.blobParts.map(function(bp) {
+          bp.circle.stop(false, true)
+          bp.circle.animate(200).radius(r).during(function() {
+            self.image.maskWith(self.group)
+          }).after(function() {
+            self.imageEl.style.visibility = 'visible'
+          });
+        })
       })
-    })
-    this.el.addEventListener('mouseleave', function() {
-      self.imageEl.style.visibility = 'hidden'
-      self.blobParts.map(function(bp) {
-        bp.circle.stop(false, true)
-        bp.circle.animate(400).radius(bp.rad).during(function() {
-          self.image.maskWith(self.group)
-        }).after(function() {
-          self.hovered = false
-        });
+
+      // on leave, shrink the blob parts back to their original size
+      // and hide the html img again
+      this.el.addEventListener('mouseleave', function() {
+        self.imageEl.style.visibility = 'hidden'
+        self.blobParts.map(function(bp) {
+          bp.circle.stop(false, true)
+          bp.circle.animate(400).radius(bp.rad).during(function() {
+            self.image.maskWith(self.group)
+          }).after(function() {
+            self.hovered = false
+          });
+        })
       })
-    })
+    } else if (onHover === 'follow') {
+      // set the blob parts' centers to the mouse position
+      this.el.addEventListener('mousemove', function(ev) {
+        self.blobParts.map(function(bp) {
+          bp.center = {
+            x: ev.offsetX,
+            y: ev.offsetY
+          }
+        })
+      })
+
+      // reset the blob parts' centers
+      this.el.addEventListener('mouseleave', function() {
+        self.blobParts.map(function(bp) {
+          bp.center = bp._center
+        })
+      })
+    }
   }
 
   // check if this is in the current viewport, any part of it
@@ -89,6 +132,13 @@ class BlobImage {
     )
   }
 
+  clampPos(pos, rad) {
+    // keep blob parts within the image.
+    // multiplying by 2.2 instead of 2 for some padding
+    pos.x = clamp(pos.x, 0, this.width-rad*2.2)
+    pos.y = clamp(pos.y, 0, this.height-rad*2.2)
+  }
+
   makeBlobPart() {
     var radius = radiusRange[0] + (Math.random() * (radiusRange[1] - radiusRange[0]))
     var centerMaxDist = {
@@ -99,14 +149,20 @@ class BlobImage {
       x: this.center.x + randRange(maxDist.x)/closenessToCenter.x - radius/2,
       y: this.center.y + randRange(maxDist.y)/closenessToCenter.y - radius/2
     }
+    var center = {
+        x: this.center.x + randRange(centerMaxDist.x),
+        y: this.center.y + randRange(centerMaxDist.y)
+    }
+
+    // so no blob parts start partially off the image
+    this.clampPos(pos, radius)
+
     return {
       rad: radius,
       vel: {x: 0, y: 0},
       pos: pos,
-      center: {
-        x: this.center.x + randRange(centerMaxDist.x),
-        y: this.center.y + randRange(centerMaxDist.y)
-      },
+      center: center,
+      _center: center, // so we remember the original center
       circle: this.svg.circle(radius*2)
         .move(pos.x, pos.y)
         .fill({ color: '#fff' }),
@@ -139,6 +195,8 @@ class BlobImage {
       .fill({color: '#ff0000'})
   }
 
+  // compute force on each blob,
+  // and apply velocity
   update() {
     if (this.hovered) {
       return
@@ -159,6 +217,8 @@ class BlobImage {
 
       bp.pos.x += bp.vel.x
       bp.pos.y += bp.vel.y
+
+      self.clampPos(bp.pos, bp.rad)
       bp.circle.move(bp.pos.x, bp.pos.y)
       bp.shadow.move(
         bp.pos.x + shadowOffset.x,
@@ -169,9 +229,11 @@ class BlobImage {
   }
 }
 
+// create blob images
 const figures = [...document.querySelectorAll('.project figure')]
 const blobs = []
 figures.map(function(el) {
+  // wait for image to load if necessary
   var img = el.querySelector('img');
   if (img.complete) {
     blobs.push(new BlobImage(el))
@@ -193,4 +255,5 @@ setInterval(function() {
     }
   })
 }, Math.floor(1000/24));
+
 
