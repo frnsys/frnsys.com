@@ -7,7 +7,7 @@
   tags: simulation
   desc: A participative agent-based economic simulation for speculating alternative economies
   url: /hosny
-  img: hosny.gif
+  img: hosny.png
 - name: cess
   tags: simulation
   desc: A simple agent-based modeling framework, supporting distributed computation
@@ -17,7 +17,7 @@
   tags: video game
   desc: A dystopian business simulator - found a startup, pursue unbounded growth, and accidentally dystopia
   url: http://thefounder.biz
-  img: the_founder.gif
+  img: the_founder.png
 - name: AI Notes
   tags: notes
   desc: A large set of notes introducing people with modest math backgrounds to artificial intelligence
@@ -37,12 +37,12 @@
   tags: game
   desc: A randomly-generated pokemon slack battling system
   url: https://github.com/frnsys/saltbeef
-  img: saltbeef.jpg
+  img: saltbeef.png
 - name: Tao
   tags: nlp
   desc: The Tao Te Ching as "interpreted" by a recurrent neural network, trained on 94 English translations
   url: https://github.com/frnsys/tao/blob/master/machine_tao.txt
-  img: tao.jpg
+  img: tao.png
 - name: Pablo
   tags: algo music
   desc: It seems like the next Avalanches album is never coming out, so here is a program that will create mix-based music for you
