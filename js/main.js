@@ -10,9 +10,9 @@ const closenessToCenter = {x: 1.5, y: 1}
 const n_circles = 5
 const padding = 10
 const shadowOffset = {x: 6, y: 6}
-const radiusRange = [60,100]
+const radiusRange = [0.4,0.9]
 const velDamp = {x: 40, y: 40}
-const gooeyness = 20;
+const gooeyness = 20
 const bounceStrength = 0.5
 const onHover = 'reveal' // 'reveal' or 'follow'
 
@@ -38,10 +38,9 @@ class BlobImage {
     this.svg = SVG(el).size(this.width, this.height)
 
     // create an SVG element of the image
-    this.imageEl = this.el.getElementsByTagName('img')[0]
+    this.imageEl = this.el.querySelector('img')
     this.imageSrc = this.imageEl.src
     this.image = this.svg.image(this.imageSrc, this.width, this.height)
-
 
     // the masking blob parts go here
     this.group = this.svg.group()
@@ -85,7 +84,7 @@ class BlobImage {
             self.image.maskWith(self.group)
           }).after(function() {
             self.imageEl.style.visibility = 'visible'
-          });
+          })
         })
       })
 
@@ -99,7 +98,7 @@ class BlobImage {
             self.image.maskWith(self.group)
           }).after(function() {
             self.hovered = false
-          });
+          })
         })
       })
     } else if (onHover === 'follow') {
@@ -135,12 +134,13 @@ class BlobImage {
   clampPos(pos, rad) {
     // keep blob parts within the image.
     // multiplying by 2.2 instead of 2 for some padding
-    pos.x = clamp(pos.x, 0, this.width-rad*2.2)
-    pos.y = clamp(pos.y, 0, this.height-rad*2.2)
+    pos.x = clamp(pos.x, padding, this.width-rad*2.2)
+    pos.y = clamp(pos.y, padding, this.height-rad*2.2)
   }
 
   makeBlobPart() {
-    var radius = radiusRange[0] + (Math.random() * (radiusRange[1] - radiusRange[0]))
+    var radiusMult = radiusRange[0] + (Math.random() * (radiusRange[1] - radiusRange[0]))
+    var radius = radiusMult * Math.min(this.width, this.height)/2
     var centerMaxDist = {
       x: this.width/2 - radius*2 - padding,
       y: this.height/2 - radius*2 - padding
@@ -227,14 +227,32 @@ class BlobImage {
     // need to re-apply the mask after movement
     this.image.maskWith(this.group)
   }
+
+  resize() {
+    var scale = this.imageEl.width/this.width
+    this.width = this.imageEl.width
+    this.height = this.imageEl.height
+    this.center = {x: this.width/2, y: this.height/2}
+    this.svg.size(this.width, this.height)
+    this.image.size(this.width, this.height)
+    this.blobParts.map(bp => {
+      bp.rad *= scale
+      bp.circle.radius(bp.rad)
+      bp.shadow.radius(bp.rad)
+      bp.center = this.center
+      bp._center = this.center
+      this.clampPos(bp.pos, bp.rad)
+    })
+  }
 }
 
 // create blob images
 const figures = [...document.querySelectorAll('.project figure')]
 const blobs = []
+const imgDims = []
 figures.map(function(el) {
   // wait for image to load if necessary
-  var img = el.querySelector('img');
+  var img = el.querySelector('img')
   if (img.complete) {
     blobs.push(new BlobImage(el))
   } else {
@@ -244,9 +262,12 @@ figures.map(function(el) {
   }
 })
 
+window.addEventListener('resize', function() {
+  blobs.map(blob => blob.resize())
+})
 
 // use setInterval to specify FPS
-const FPS = 24;
+const FPS = 24
 setInterval(function() {
   blobs.map(function(blob) {
     // only update visible blobs
@@ -254,6 +275,4 @@ setInterval(function() {
       blob.update()
     }
   })
-}, Math.floor(1000/24));
-
-
+}, Math.floor(1000/24))
