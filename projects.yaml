@@ -1,7 +1,27 @@
+- name: Conspiracy Bot
+  tags: machine learning, computer vision, nlp
+  desc: A bot that generates conspiracies. For The New Inquiry
+  url: https://conspiracy.thenewinquiry.com
+  img: conspiracy_bot.png
+- name: White Collar Crime Risk Zones
+  tags: prediction, crime
+  desc: A predictive policing app for white collar crime. Collab w/ Sam Lavigne & Brian Clifton for The New Inquiry
+  url: https://whitecollar.thenewinquiry.com
+  img: wccrz.jpg
+- name: High Rise/Party Fortress
+  tags: tool, simulation
+  desc: Tool for designing social-spatial simulations with an example project. Collab w/ Fei Liu & Dan Taeyoung
+  url: http://spaceandtim.es/projects/party_fortress
+  img: highrise.png
+- name: Polynomial Designer
+  tags: tool, math
+  desc: Tool for designing equations by drawing them
+  url: https://github.com/frnsys/polynomial_designer
+  img: polynomial_designer.png
 - name: Speculating Futures
   tags: reading list
   desc: A reading list around speculative fiction, technology, and politics
-  url: http://speculatingfutures.club
+  url: https://speculatingfutures.club
   img: speculating_futures.png
 - name: Humans of Simulated New York
   tags: simulation

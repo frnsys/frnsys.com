@@ -5,6 +5,7 @@ resources:
     - "A detailed write-up of the project is [available here](http://spaceandtim.es/projects/hosny)."
     - "The project's source code is [available on GitHub](https://github.com/frnsys/hosny)."
     - "You can see some of our research on [our blog](https://www.tumblr.com/blog/humansofsimulatedny)."
+    - "A paper on the project, published with Bernardo Alves Furtado, is available on [arxiv.org](https://arxiv.org/abs/1703.05240)."
 ---
 
 [![](/assets/hosny/hosny.gif)](/assets/hosny/hosny.gif)
