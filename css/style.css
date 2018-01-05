@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Cousine:400,400i');
+@import url('https://fonts.googleapis.com/css?family=Arimo:400,400i,700,700i');
 
 ::-moz-selection { background: #0ea2d1; color: #fff; text-shadow: none; }
 ::selection { background: #0ea2d1; color: #fff; text-shadow: none; }
@@ -10,11 +10,11 @@
 }
 
 html, body {
-  background: #FFAFAF;
+  background: #e3e3e3;
   margin: 0;
   padding: 0;
   text-align: center;
-  font-family: 'Cousine', monospace;
+  font-family: 'Arimo', sans-serif;
 }
 
 h1, h1 a, h1 a:visited {
@@ -30,14 +30,39 @@ h2 {
   text-align: center;
   color: rgba(0,0,0,0.4);
 }
-.projects {
+section {
+  margin-top: 8em;
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-items: center;
   vertical-align: top;
-  margin: 6em 0 0 0;
+  margin: 2em 0 0 0;
+}
+.grid-item {
+  max-width: 320px;
+  width: 100%;
+  margin: 0em 3em 3em;
+}
+.channel {
+  line-height: 1.5;
+  padding: 2em 2em 4em 2em;
+  background: blue;
+  box-shadow: 2px 2px 8px rgba(0,0,0,0.2);
+}
+.channel h1 {
+  color: #fff;
+}
+.channel a, .channel a:visited {
+  color: #ecdf0d;
+  margin: 0 0.2em;
+}
+.channel a:hover {
+  color: #fff;
 }
 .project {
-  display: inline-block;
-  max-width: 320px;
-  margin: 0em 6em 20em;
+  margin: 0em 3em 8em;
 }
 .project p {
   padding: 0 2em;
@@ -50,12 +75,11 @@ h2 {
 }
 .project figure img {
   width: 100%;
-  visibility: hidden;
+  box-shadow: 2px 2px 8px rgba(0,0,0,0.2);
+  transition: all 0.4s;
 }
-.project figure svg {
-  position: absolute;
-  left: 0;
-  top: -2px;
+.project figure img:hover {
+  box-shadow: 2px 2px 8px rgba(0,0,0,0.4);
 }
 
 header {
@@ -77,10 +101,10 @@ ul, li {;
 }
 
 a, a:visited {
-  color: #dc3636;
+  color: #364adc;
 }
 a:hover {
-  color: #f50a0a;
+  color: #ec1d1d;
 }
 
 hr {
@@ -106,7 +130,7 @@ img {
   padding-right: 0;
 }
 .meta em {
-  color: #dc3636;
+  color: #364adc;
 }
 
 header, .projects, .meta {
@@ -117,5 +141,14 @@ header, .projects, .meta {
   .meta li {
     width: 100%;
     padding: 1em 2em;
+  }
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .grid {
+    grid-template-columns: repeat(1, 1fr);
   }
 }

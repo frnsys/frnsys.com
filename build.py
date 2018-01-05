@@ -44,7 +44,7 @@ def prep_build_dir():
         os.mkdir(BUILD_DIR)
     for f in os.listdir(BUILD_DIR):
         fpath = os.path.join(BUILD_DIR, f)
-        if os.path.isfile(fpath):
+        if os.path.isfile(fpath) or os.path.islink(fpath):
             os.remove(fpath)
         elif os.path.isdir(fpath):
             shutil.rmtree(fpath)
@@ -72,13 +72,15 @@ if __name__ == '__main__':
     meta = yaml.load(open('meta.yaml', 'r'))
     projects = yaml.load(open('projects.yaml', 'r'))
     stalled = yaml.load(open('stalled.yaml', 'r'))
-    html = templ.render(projects=projects, stalled=stalled, meta=meta)
+    channels = yaml.load(open('channels.yaml', 'r'))
+    html = templ.render(projects=projects, stalled=stalled, channels=channels, meta=meta)
     with open(os.path.join(BUILD_DIR, 'index.html'), 'w') as f:
         f.write(html)
 
     # assets etc
-    for d in ['assets', 'css', 'js', 'favicon.ico']:
+    for d in ['css', 'js', 'favicon.ico']:
         if os.path.isdir(d):
             shutil.copytree(d, '.build/{}'.format(d))
         else:
             shutil.copy(d, '.build/{}'.format(d))
+    os.symlink('../assets', '.build/assets')

@@ -1,6 +1,6 @@
 - name: Conspiracy Bot
   tags: machine learning, computer vision, nlp
-  desc: A bot that generates conspiracies. For The New Inquiry
+  desc: A bot that generates conspiracies. For The New Inquiry. <a href="http://spaceandtim.es/projects/conspiracy/">Technical breakdown here</a>
   url: https://conspiracy.thenewinquiry.com
   img: conspiracy_bot.png
 - name: White Collar Crime Risk Zones
@@ -18,6 +18,11 @@
   desc: Tool for designing equations by drawing them
   url: https://github.com/frnsys/polynomial_designer
   img: polynomial_designer.png
+- name: Machine Learning for Artists Guides
+  tags: guides, teaching, machine learning
+  desc: A collection of introductory machine learning guides, w/ Gene Kogan
+  url: http://ml4a.github.io/guides/
+  img: ml4a_guides.jpg
 - name: Speculating Futures
   tags: reading list
   desc: A reading list around speculative fiction, technology, and politics
@@ -25,7 +30,7 @@
   img: speculating_futures.png
 - name: Humans of Simulated New York
   tags: simulation
-  desc: A participative agent-based economic simulation for speculating alternative economies
+  desc: A participative agent-based economic simulation for speculating alternative economies, w/ Fei Liu
   url: /hosny
   img: hosny.png
 - name: cess

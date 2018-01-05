@@ -1,5 +1,5 @@
 {% macro project(p) -%}
-    <li class="project">
+    <li class="grid-item project">
         <a href="{{ p.url }}">
             <figure>
                 <img src="/assets/projects/{{ p.img }}" alt="{{ p.name }}">
@@ -8,6 +8,15 @@
         <h1><a href="{{ p.url }}">{{ p.name }}</a></h1>
         <h2>{{ p.tags }}</h2>
         <p>{{ p.desc }}</p>
+    </li>
+{%- endmacro %}
+
+{% macro channel(c) -%}
+    <li class="grid-item channel">
+        <h1>{{ c.name }}</h1>
+        {% for u in c.urls %}
+            <a href="{{ u.url }}">{{ u.name }}</a>
+        {% endfor %}
     </li>
 {%- endmacro %}
 
@@ -30,20 +39,31 @@
         <li><em>currently</em>: {{ meta.currently|safe }}</li>
         <li><em>upcoming</em>: {{ meta.upcoming|safe }}</li>
     </ul>
-    <ul class="projects">
-        {% for p in projects %}
-            {{ project(p) }}
-        {% endfor %}
-    </ul>
 
-    <h1>Stalled & Unfinished</h1>
-    <ul class="projects">
-        {% for p in stalled %}
-            {{ project(p) }}
-        {% endfor %}
-    </ul>
+    <section>
+        <h1>Research Threads</h1>
+        <ul class="grid channels">
+            {% for c in channels %}
+                {{ channel(c) }}
+            {% endfor %}
+        </ul>
+    </section>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/svg.js/2.4.0/svg.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/svg.filter.js/2.0.2/svg.filter.min.js"></script>
-    <script src="/js/main.js"></script>
+    <section>
+        <h1>Projects</h1>
+        <ul class="grid projects">
+            {% for p in projects %}
+                {{ project(p) }}
+            {% endfor %}
+        </ul>
+    </section>
+
+    <section>
+        <h1>Stalled & Unfinished</h1>
+        <ul class="grid projects">
+            {% for p in stalled %}
+                {{ project(p) }}
+            {% endfor %}
+        </ul>
+    </section>
 {% endblock %}

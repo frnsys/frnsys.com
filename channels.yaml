@@ -1,0 +1,42 @@
+- name: mobility
+  urls:
+    - name: mobility
+      url: https://www.are.na/francis-tseng/mobility-is-a-human-right
+- name: climate change
+  urls:
+    - name: ag tech
+      url: https://www.are.na/francis-tseng/agricultural-tech
+    - name: strategies
+      url: https://www.are.na/francis-tseng/climate-change-strategy
+- name: voting & fair division
+  urls:
+    - name: voting rights & gerrymandering
+      url: https://www.are.na/francis-tseng/voting-rights
+    - name: decentralization
+      url: https://www.are.na/francis-tseng/decentralization-toolkit
+    - name: division etc algos
+      url: https://www.are.na/francis-tseng/decision-making-algorithms
+    - name: cryptoeconomics
+      url: https://www.are.na/francis-tseng/cryptoeconomics
+    - name: allocation theory
+      url: https://www.are.na/francis-tseng/allocation-theory
+    - name: blockchain communalism
+      url: https://www.are.na/francis-tseng/blockchain-communalism
+- name: algo accountability
+  urls:
+    - name: engineering ethics
+      url: https://www.are.na/francis-tseng/software-engineering-design-ethics
+    - name: technical approaches
+      url: https://www.are.na/francis-tseng/making-ai-less-bad
+    - name: adversarial methods
+      url: https://www.are.na/francis-tseng/adversarial-machine-learning-1487698534
+- name: local infrastructures
+  urls:
+    - name: stopgaps
+      url: https://www.are.na/francis-tseng/stopgaps
+- name: misc
+  urls:
+    - name: sabotage, heresy, & traps
+      url: https://www.are.na/francis-tseng/sabotage-heresy-traps
+    - name: handy concepts
+      url: https://www.are.na/francis-tseng/handy-concepts
