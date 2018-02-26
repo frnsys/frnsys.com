@@ -1,14 +1,19 @@
-- name: mobility
+- name: Mobility
+  background: mobility.jpg
   urls:
     - name: mobility
       url: https://www.are.na/francis-tseng/mobility-is-a-human-right
-- name: climate change
+- name: Climate Change
+  background: climate_change.jpg
   urls:
     - name: ag tech
       url: https://www.are.na/francis-tseng/agricultural-tech
     - name: strategies
       url: https://www.are.na/francis-tseng/climate-change-strategy
-- name: voting & fair division
+    - name: climate justice
+      url: https://www.are.na/francis-tseng/climate-justice-1515113427
+- name: Voting & Fair Division
+  background: fair_division.jpg
   urls:
     - name: voting rights & gerrymandering
       url: https://www.are.na/francis-tseng/voting-rights
@@ -22,7 +27,8 @@
       url: https://www.are.na/francis-tseng/allocation-theory
     - name: blockchain communalism
       url: https://www.are.na/francis-tseng/blockchain-communalism
-- name: algo accountability
+- name: Algorithmic Accountability
+  background: algo_accountability.png
   urls:
     - name: engineering ethics
       url: https://www.are.na/francis-tseng/software-engineering-design-ethics
@@ -30,13 +36,27 @@
       url: https://www.are.na/francis-tseng/making-ai-less-bad
     - name: adversarial methods
       url: https://www.are.na/francis-tseng/adversarial-machine-learning-1487698534
-- name: cooperative infrastructures
+    - name: explainability
+      url: https://are.na/francis-tseng/explainable-ai
+- name: Alternative Infrastructures
+  background: alt_infrastructure.jpg
   urls:
     - name: stopgaps
       url: https://www.are.na/francis-tseng/stopgaps
-- name: misc
+    - name: innovation
+      url: https://www.are.na/francis-tseng/innovation-1501475371
+    - name: energy
+      url: https://are.na/francis-tseng/energy-infrastructure-1517929650
+    - name: logistics
+      url: https://are.na/francis-tseng/logistics-1502135735
+- name: Misc
+  background: sabotage.jpg
   urls:
     - name: sabotage, heresy, & traps
       url: https://www.are.na/francis-tseng/sabotage-heresy-traps
     - name: handy concepts
       url: https://www.are.na/francis-tseng/handy-concepts
+    - name: simulation & cybernetics
+      url: https://are.na/francis-tseng/simulation-cybernetics
+    - name: visual explanations
+      url: https://are.na/francis-tseng/visual-explanations

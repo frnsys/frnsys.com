@@ -1,3 +1,8 @@
+- name: CyberSym
+  tags: simulation, visualization
+  desc: A simulation to interact with the <a href="http://cybernetics.social/">Cybernetics Conference</a> <a href="http://cybernetics.social/library/">Library</a>, w/ Dan Taeyoung
+  img: cybersym.png
+  url: /cybersym
 - name: Conspiracy Bot
   tags: machine learning, computer vision, nlp
   desc: A bot that generates conspiracies. For The New Inquiry. <a href="http://spaceandtim.es/projects/conspiracy/">Technical breakdown here</a>

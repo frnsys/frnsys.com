@@ -39,14 +39,18 @@ a:hover {
   margin: 3em auto;
   display: block;
 }
-.project-single figure img {
+.project-single figure img,
+.project-single figure video {
   margin: 0 auto;
+  display: block;
+  max-height: 500px;
 }
 .project-single img {
   box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.2);
 }
 .project-single figcaption {
   font-style: italic;
+  text-align: center;
   padding: 1em 3em;
   color: rgba(0, 0, 0, 0.5);
 }

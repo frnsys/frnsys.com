@@ -12,7 +12,7 @@
 {%- endmacro %}
 
 {% macro channel(c) -%}
-    <li class="grid-item channel">
+    <li class="grid-item channel" style="background-image:url('/assets/research/{{ c.background }}');">
         <h1>{{ c.name }}</h1>
         {% for u in c.urls %}
             <a href="{{ u.url }}">{{ u.name }}</a>
@@ -28,17 +28,35 @@
         <h2>design # dev # data</h2>
         <ul class="links">
             <li><a href="http://spaceandtim.es">writing</a></li>
-            <li><a href="http://publicscience.co">public science</a></li>
             <li><a href="https://www.are.na/francis-tseng">are.na</a></li>
             <li><a href="https://twitter.com/frnsys">twitter</a></li>
             <li><a href="https://github.com/frnsys/">github</a></li>
         </ul>
     </header>
-    <ul class="meta">
-        <li><em>previously</em>: {{ meta.previously|safe }}</li>
-        <li><em>currently</em>: {{ meta.currently|safe }}</li>
-        <li><em>upcoming</em>: {{ meta.upcoming|safe }}</li>
-    </ul>
+    <div class="meta">
+        <div>
+            <em>currently</em>
+            <ul>
+                {% for item in meta.currently %}
+                    <li>{{ item|safe }}</li>
+                {% endfor %}
+            </ul>
+            <div class="work-together">
+                <h3>want to work together?</h3>
+                <p><em>specialties</em>: simulation, machine learning, design, forecasting, tool building, data analysis, game design, general software development, education</p>
+                <p><em>looking for projects in the domains of</em>: agriculture, recycling, voting, transit/mobility, energy, climate, logistics, algorithmic accountability, cryptoeconomics, journalism, ...</p>
+                <p>contact me at <em>f[at]frnsys.com</em></p>
+            </div>
+        </div>
+        <div>
+            <em>previously</em>
+            <ul>
+                {% for item in meta.previously %}
+                    <li>{{ item|safe }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
 
     <section>
         <h1>Research Threads</h1>
@@ -50,7 +68,7 @@
     </section>
 
     <section>
-        <h1>Projects</h1>
+        <h1>Past Work</h1>
         <ul class="grid projects">
             {% for p in projects %}
                 {{ project(p) }}

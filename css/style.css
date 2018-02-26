@@ -18,7 +18,6 @@ html, body {
 }
 
 h1, h1 a, h1 a:visited {
-  color: #184580;
   font-weight: normal;
   font-size: 1em;
   text-align: center;
@@ -33,6 +32,9 @@ h2 {
 section {
   margin-top: 8em;
 }
+section > h1 {
+  font-size: 2em;
+}
 .grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -41,7 +43,7 @@ section {
   margin: 2em 0 0 0;
 }
 .grid-item {
-  max-width: 320px;
+  max-width: 300px;
   width: 100%;
   margin: 0em 3em 3em;
 }
@@ -50,22 +52,31 @@ section {
   padding: 2em 2em 4em 2em;
   background: blue;
   box-shadow: 2px 2px 8px rgba(0,0,0,0.2);
+  border-radius: 1em;
+  background-size: cover;
+  background-position: center;
+  background-blend-mode: multiply;
+  background-color: #d3dbf2;
 }
 .channel h1 {
   color: #fff;
+  background: #222;
 }
 .channel a, .channel a:visited {
-  color: #ecdf0d;
   margin: 0 0.2em;
+  text-decoration: none;
+  background: #ecdf0d;
+  color: #222;
 }
 .channel a:hover {
   color: #fff;
+  background: #ed134c;
 }
 .project {
   margin: 0em 3em 8em;
 }
 .project p {
-  padding: 0 2em;
+  padding: 0;
   text-align: left;
 }
 .project figure {
@@ -77,6 +88,7 @@ section {
   width: 100%;
   box-shadow: 2px 2px 8px rgba(0,0,0,0.2);
   transition: all 0.4s;
+  border-radius: 1em;
 }
 .project figure img:hover {
   box-shadow: 2px 2px 8px rgba(0,0,0,0.4);
@@ -101,7 +113,7 @@ ul, li {;
 }
 
 a, a:visited {
-  color: #364adc;
+  color: #213cff;
 }
 a:hover {
   color: #ec1d1d;
@@ -119,18 +131,36 @@ img {
   max-width: 100%;
 }
 
-.meta li {
-  display: inline-block;
-  width: 30%;
-  text-align: left;
-  vertical-align: top;
-  padding-right: 1.5%;
+.meta {
+  text-align: center;
 }
-.meta li:last-child {
-  padding-right: 0;
+.meta > div {
+  text-align: left;
+  display: inline-block;
+  vertical-align: top;
+  padding: 0 1em;
+  max-width: 360px;
+}
+.meta li:before {
+  content: "•";
+  padding-right: 0.4em;
+  color: red;
+}
+.meta li {
+  margin-bottom: 0.2em;
 }
 .meta em {
-  color: #364adc;
+  color: #213cff;
+}
+.meta .work-together {
+  margin: 2em 0 3em 0;
+  padding: 0.1em 1.5em;
+  background: #d6d6d6;
+  border-radius: 0.5em;
+}
+.meta .work-together h3 {
+  font-weight: normal;
+  text-decoration: underline;
 }
 
 header, .projects, .meta {
