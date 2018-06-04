@@ -152,19 +152,29 @@ img {
 .meta em {
   color: #213cff;
 }
-.meta .work-together {
+.meta .highlight {
   margin: 2em 0 3em 0;
   padding: 0.1em 1.5em;
   background: #d6d6d6;
   border-radius: 0.5em;
 }
-.meta .work-together h3 {
+.meta .highlight h3 {
   font-weight: normal;
   text-decoration: underline;
 }
 
 header, .projects, .meta {
   font-size: 0.9em;
+}
+
+iframe {
+  width: 920px;
+  height: 480px;
+  max-width: 100%;
+  max-height: 100vh;
+  border: 5px solid #333;
+  border-radius: 0.5em;
+  box-shadow: 2px 2px 8px rgba(0,0,0,0.1);
 }
 
 @media (max-width: 900px) {
