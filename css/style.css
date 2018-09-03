@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Arimo:400,400i,700,700i');
+@import url('https://fonts.googleapis.com/css?family=Nunito+Sans:400,400i,700,700i|Muli');
 
 ::-moz-selection { background: #0ea2d1; color: #fff; text-shadow: none; }
 ::selection { background: #0ea2d1; color: #fff; text-shadow: none; }
@@ -10,14 +10,15 @@
 }
 
 html, body {
-  background: #e3e3e3;
+  background: #f3f3f3;
   margin: 0;
   padding: 0;
   text-align: center;
-  font-family: 'Arimo', sans-serif;
+  font-family: 'Nunito Sans', sans-serif;
 }
 
 h1, h1 a, h1 a:visited {
+  font-family: 'Muli';
   font-weight: normal;
   font-size: 1em;
   text-align: center;
@@ -37,61 +38,84 @@ section > h1 {
 }
 .grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   justify-items: center;
   vertical-align: top;
-  margin: 2em 0 0 0;
+  max-width: 1000px;
+  width: 100%;
+  padding: 0 2em;
+  margin: 2em auto 0;
 }
 .grid-item {
   max-width: 300px;
   width: 100%;
-  margin: 0em 3em 3em;
+  margin: 0em 3em 2em;
+  display: flex;
+  max-width: 450px;
 }
-.channel {
-  line-height: 1.5;
-  padding: 2em 2em 4em 2em;
-  background: blue;
-  box-shadow: 2px 2px 8px rgba(0,0,0,0.2);
-  border-radius: 1em;
-  background-size: cover;
-  background-position: center;
-  background-blend-mode: multiply;
-  background-color: #d3dbf2;
+.grid-item h1 {
+  margin: 0;
+  text-align: left;
+  font-size: 1.6em;
+  line-height: 1;
 }
-.channel h1 {
-  color: #fff;
-  background: #222;
-}
-.channel a, .channel a:visited {
-  margin: 0 0.2em;
-  text-decoration: none;
-  background: #ecdf0d;
-  color: #222;
-}
-.channel a:hover {
-  color: #fff;
-  background: #ed134c;
-}
-.project {
-  margin: 0em 3em 8em;
-}
-.project p {
+.grid-item p {
   padding: 0;
   text-align: left;
 }
-.project figure {
-  width: 100%;
+.grid-item figure {
+  width: 150px;
+  min-width: 150px;
   position: relative;
   margin: 0 0 1em 0;
 }
-.project figure img {
+.grid-item figure img {
   width: 100%;
   box-shadow: 2px 2px 8px rgba(0,0,0,0.2);
   transition: all 0.4s;
   border-radius: 1em;
 }
-.project figure img:hover {
+.grid-item figure img:hover {
   box-shadow: 2px 2px 8px rgba(0,0,0,0.4);
+}
+.grid-item-info {
+  margin-left: 1.5em;
+}
+
+.channel a, .channel a:visited {
+  color: #fff;
+  margin: 0 0.2em;
+  text-decoration: none;
+  background: #0ab129;
+  padding: 0.1em 0.2em;
+  border-radius: 0.2em;
+  white-space: nowrap;
+}
+.channel a:hover {
+  color: #fff;
+  background: #0c53bf;
+}
+.channel p {
+  font-size: 0.9em;
+  line-height: 1.8;
+}
+.channel figure {
+  height: 200px;
+}
+.channel figure img {
+  object-fit: cover;
+  height: 100%;
+}
+
+.project h1 a {
+  color: #111;
+}
+.project h1 a:hover {
+  color: #213cff;
+}
+.project h2 {
+  margin-top: 0.2em;
+  text-align: left;
 }
 
 header {
@@ -180,15 +204,34 @@ iframe {
 @media (max-width: 900px) {
   .meta li {
     width: 100%;
-    padding: 1em 2em;
+    padding: 0 2em;
   }
   .grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(1, 1fr);
   }
 }
 
-@media (max-width: 600px) {
-  .grid {
-    grid-template-columns: repeat(1, 1fr);
+@media (max-width: 480px) {
+  .grid-item {
+    display: block;
+    max-width: 300px;
+    width: 100%;
+    margin: 0 0 5em 0;
+  }
+  .grid-item figure {
+    margin: 0 auto 1.5em auto;
+  }
+  .grid-item h1 {
+    text-align: center;
+    font-size: 1.2em;
+  }
+  .grid-item h2 {
+    text-align: center;
+  }
+  .grid-item-info {
+    margin: 0;
+  }
+  .channel p {
+    text-align: center;
   }
 }

@@ -5,18 +5,27 @@
                 <img src="/assets/projects/{{ p.img }}" alt="{{ p.name }}">
             </figure>
         </a>
-        <h1><a href="{{ p.url }}">{{ p.name }}</a></h1>
-        <h2>{{ p.tags }}</h2>
-        <p>{{ p.desc }}</p>
+        <div class="grid-item-info">
+            <h1><a href="{{ p.url }}">{{ p.name }}</a></h1>
+            <h2>{{ p.tags }}</h2>
+            <p>{{ p.desc }}</p>
+        </div>
     </li>
 {%- endmacro %}
 
 {% macro channel(c) -%}
-    <li class="grid-item channel" style="background-image:url('/assets/research/{{ c.background }}');">
-        <h1>{{ c.name }}</h1>
-        {% for u in c.urls %}
-            <a href="{{ u.url }}">{{ u.name }}</a>
-        {% endfor %}
+    <li class="grid-item channel">
+        <figure>
+            <img src="/assets/research/{{ c.background }}" alt="{{ c.name }}">
+        </figure>
+        <div class="grid-item-info">
+            <h1>{{ c.name }}</h1>
+            <p>
+                {% for u in c.urls %}
+                    <a href="{{ u.url }}">{{ u.name }}</a>
+                {% endfor %}
+            </p>
+        </div>
     </li>
 {%- endmacro %}
 

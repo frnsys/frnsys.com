@@ -1,0 +1,6 @@
+#!/bin/bash
+
+while inotifywait ./ --exclude .build/; do
+    echo "Building..."
+    python3 build.py
+done
