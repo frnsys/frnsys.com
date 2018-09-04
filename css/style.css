@@ -218,6 +218,7 @@ iframe {
     margin: 0 0 5em 0;
   }
   .grid-item figure {
+    width: 200px;
     margin: 0 auto 1.5em auto;
   }
   .grid-item h1 {
@@ -232,5 +233,8 @@ iframe {
   }
   .channel p {
     text-align: center;
+  }
+  .channel figure {
+    height: 240px;
   }
 }
