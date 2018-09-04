@@ -1,4 +1,4 @@
-- name: Mobility
+- name: Mobility & Public Transit
   background: mobility.jpg
   urls:
     - name: mobility

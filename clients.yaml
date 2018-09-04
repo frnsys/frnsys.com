@@ -1,8 +1,16 @@
-- The Marshall Project
-- Are.na
-- The New Republic
-- Institute for Applied Economic Research
-- Rivet
-- BuzzFeed
-- Consensys
-- China Residencies
+- name: The Marshall Project
+  url: https://www.themarshallproject.org/
+- name: Are.na
+  url: https://www.are.na/
+- name: The New Republic
+  url: https://newrepublic.com/
+- name: Institute for Applied Economic Research
+  url: http://www.ipea.gov.br/portal/index.php?option=com_content&Itemid=61
+- name: Rivet
+  url: https://rivet.es/
+- name: BuzzFeed
+  url: https://www.buzzfeed.com/
+- name: Consensys
+  url: https://consensys.net
+- name: China Residencies
+  url: https://www.chinaresidencies.com/

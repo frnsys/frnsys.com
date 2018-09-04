@@ -25,7 +25,7 @@
   url: https://github.com/frnsys/cartog
 - name: Bail Bloc
   tags: crypto, blockchain
-  desc: A Monero miner for using excess computing power and crypto speculation to collectively post bail for low-income people, developed with Grayson Earle, Maya Binyam, JB Rubinovitz, Sam Lavigne, Rachel Rosenfelt, Madeleine Varner, Devin Kenny, and the rest of Dark Inquiry
+  desc: A Monero miner for using excess computing power and crypto speculation to collectively post bail for low-income people, developed with Grayson Earle, Maya Binyam, JB Rubinovitz, Sam Lavigne, Rachel Rosenfelt, Madeleine Varner, Devin Kenny, and the rest of Dark Inquiry. <a href='https://bailbloc.thenewinquiry.com/'>Download here</a>
   img: bailbloc.png
   url: https://bailbloc.thenewinquiry.com/
 - name: CyberSym
@@ -80,7 +80,7 @@
   img: cess.png
 - name: The Founder
   tags: video game
-  desc: A dystopian business simulator - found a startup, pursue unbounded growth, and accidentally dystopia
+  desc: A dystopian business simulator - found a startup, pursue unbounded growth, and accidentally dystopia. <a href='http://thefounder.biz/play'>Play here</a>
   url: http://thefounder.biz
   img: the_founder.png
 - name: AI Notes
