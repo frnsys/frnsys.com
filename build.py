@@ -73,7 +73,8 @@ if __name__ == '__main__':
     projects = yaml.load(open('projects.yaml', 'r'))
     stalled = yaml.load(open('stalled.yaml', 'r'))
     channels = yaml.load(open('channels.yaml', 'r'))
-    html = templ.render(projects=projects, stalled=stalled, channels=channels, meta=meta)
+    clients = yaml.load(open('clients.yaml', 'r'))
+    html = templ.render(projects=projects, stalled=stalled, channels=channels, meta=meta, clients=clients)
     with open(os.path.join(BUILD_DIR, 'index.html'), 'w') as f:
         f.write(html)
 

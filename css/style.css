@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Nunito+Sans:400,400i,700,700i|Muli');
 
-::-moz-selection { background: #0ea2d1; color: #fff; text-shadow: none; }
-::selection { background: #0ea2d1; color: #fff; text-shadow: none; }
+::-moz-selection { background: #213cff; color: #fff; text-shadow: none; }
+::selection { background: #213cff; color: #fff; text-shadow: none; }
 
 * {
 	-moz-box-sizing: border-box;
@@ -41,17 +41,16 @@ section > h1 {
   grid-template-columns: repeat(2, 1fr);
   justify-items: center;
   vertical-align: top;
-  max-width: 1000px;
+  max-width: 1280px;
   width: 100%;
   padding: 0 2em;
   margin: 2em auto 0;
 }
 .grid-item {
-  max-width: 300px;
   width: 100%;
   margin: 0em 3em 2em;
   display: flex;
-  max-width: 450px;
+  max-width: 520px;
 }
 .grid-item h1 {
   margin: 0;
@@ -110,7 +109,7 @@ section > h1 {
 .project h1 a {
   color: #111;
 }
-.project h1 a:hover {
+.project:hover h1 a {
   color: #213cff;
 }
 .project h2 {

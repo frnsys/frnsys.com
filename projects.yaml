@@ -1,8 +1,43 @@
+- name: hyperdocs
+  tags: tool, p2p
+  desc: A proof-of-concept for p2p collaborative text editing using the Dat protocol. Currently only supports plain text editing; rich text support is in progress
+  img: hyperdocs.png
+  url: https://github.com/frnsys/hyperdocs/
+- name: Cell
+  tags: blockchain, simulation
+  desc: A whitepaper describing a collective computing project for the atomic simulation of a single human cell and distributing subsequent medical research revenue, w/ Sean Raspet for Rhizome's Seven-on-Seven
+  img: cell.png
+  url: http://cell.farm/
+- name: Transit Demand Simulation
+  tags: transit, simulation
+  desc: A transit demand model for the Institute for Applied Economic Research, part of the PolicySpace model. Simulates public transit and private vehicle usage given a city's GTFS feed and available OpenStreetMap data
+  img: transit.png
+  url: https://github.com/frnsys/transit_demand_model
+- name: PolicySpace
+  tags: economics, geospatial, simulation
+  desc: An open agent-based model with three markets and a tax scheme that empirically simulates 46 Brazilian metropolitan regions, developed with Bernardo Furtado with the Institute for Applied Economic Research.
+  img: policyspace.png
+  url: http://www.ipea.gov.br/portal/index.php?option=com_content&view=article&id=33132&Itemid=433
+- name: cartog
+  tags: framework, simulation
+  desc: A Javascipt framework for creating management and system simulation games, developed for my Simulation & Cybernetics class at The New School
+  img: cartog.png
+  url: https://github.com/frnsys/cartog
+- name: Bail Bloc
+  tags: crypto, blockchain
+  desc: A Monero miner for using excess computing power and crypto speculation to collectively post bail for low-income people, developed with Grayson Earle, Maya Binyam, JB Rubinovitz, Sam Lavigne, Rachel Rosenfelt, Madeleine Varner, Devin Kenny, and the rest of Dark Inquiry
+  img: bailbloc.png
+  url: https://bailbloc.thenewinquiry.com/
 - name: CyberSym
   tags: simulation, visualization
   desc: A simulation to interact with the <a href="http://cybernetics.social/">Cybernetics Conference</a> <a href="http://cybernetics.social/library/">Library</a>, w/ Dan Taeyoung
   img: cybersym.png
   url: /cybersym
+- name: Cybernetics Conference
+  tags: conference
+  desc: A conference and library in NYC, 11/18/2017, on cybernetics, informatic systems, and social organization; organized with Sam Hart, Melanie Hoff, Sarah Hamerman, David Isaac Hecht, Dan Taeyoung, Charles Eppley, and Alexis Convento
+  img: cybercon.png
+  url: https://cybernetics.social/
 - name: Conspiracy Bot
   tags: machine learning, computer vision, nlp
   desc: A bot that generates conspiracies. For The New Inquiry. <a href="http://spaceandtim.es/projects/conspiracy/">Technical breakdown here</a>
@@ -39,7 +74,7 @@
   url: /hosny
   img: hosny.png
 - name: cess
-  tags: simulation
+  tags: framework, simulation
   desc: A simple agent-based modeling framework, supporting distributed computation
   url: https://github.com/frnsys/cess
   img: cess.png

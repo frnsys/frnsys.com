@@ -13,6 +13,12 @@
     </li>
 {%- endmacro %}
 
+{% macro client(c) -%}
+    <li class="grid-item client">
+        <h1>{{ c }}</h1>
+    </li>
+{%- endmacro %}
+
 {% macro channel(c) -%}
     <li class="grid-item channel">
         <figure>
@@ -83,10 +89,19 @@
     </section>
 
     <section>
-        <h1>Past Work</h1>
+        <h1>Work</h1>
         <ul class="grid projects">
             {% for p in projects %}
                 {{ project(p) }}
+            {% endfor %}
+        </ul>
+    </section>
+
+    <section>
+        <h1>Past Clients</h1>
+        <ul class="grid clients">
+            {% for c in clients %}
+                {{ client(c) }}
             {% endfor %}
         </ul>
     </section>
