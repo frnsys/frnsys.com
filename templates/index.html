@@ -37,81 +37,102 @@
 
 {% extends 'layout.html' %}
 {% block content %}
-    <header>
-        <img src="/assets/brand.gif" class="brand">
-        <h1>Francis Tseng</h1>
-        <h2>design # dev # data</h2>
-        <ul class="links">
-            <li><a href="http://spaceandtim.es">writing</a></li>
-            <li><a href="https://www.are.na/francis-tseng">are.na</a></li>
-            <li><a href="https://twitter.com/frnsys">twitter</a></li>
-            <li><a href="https://github.com/frnsys/">github</a></li>
+<header>
+    <img src="/assets/brand.gif" class="brand">
+    <h1>Francis Tseng</h1>
+    <h2>design # dev # data</h2>
+    <ul class="links">
+        <li><a href="http://spaceandtim.es">writing</a></li>
+        <li><a href="https://www.are.na/francis-tseng">are.na</a></li>
+        <li><a href="https://twitter.com/frnsys">twitter</a></li>
+        <li><a href="https://github.com/frnsys/">github</a></li>
+    </ul>
+</header>
+<div class="meta">
+    <div>
+        <em>currently</em>
+        <ul>
+            {% for item in meta.currently %}
+                <li>{{ item|safe }}</li>
+            {% endfor %}
         </ul>
-    </header>
-    <div class="meta">
-        <div>
-            <em>currently</em>
-            <ul>
-                {% for item in meta.currently %}
-                    <li>{{ item|safe }}</li>
-                {% endfor %}
-            </ul>
-            <div class="highlight">
-                <h3>want to work together?</h3>
-                <p><em>specialties</em>: simulation, machine learning, design, forecasting, tool building, data analysis, game design, general software development, education</p>
-                <p><em>looking for projects in the domains of</em>: agriculture, recycling, voting, transit/mobility, energy, climate, logistics, algorithmic accountability, cryptoeconomics, journalism, ...</p>
-                <p>contact me at <em>f[at]frnsys.com</em></p>
-            </div>
-        </div>
-        <div>
-            <em>previously</em>
-            <ul>
-                {% for item in meta.previously %}
-                    <li>{{ item|safe }}</li>
-                {% endfor %}
-            </ul>
+        <div class="highlight">
+            <h3>want to work together?</h3>
+            <p><em>specialties</em>: simulation, machine learning, design, forecasting, tool building, data analysis, game design, general software development, education</p>
+            <p><em>looking for projects in the domains of</em>: agriculture, recycling, voting, transit/mobility, energy, climate, logistics, algorithmic accountability, cryptoeconomics, journalism, ...</p>
+            <p>contact me at <em>f[at]frnsys.com</em></p>
         </div>
     </div>
-
-    <section>
-        <h1>Research Threads</h1>
-        <ul class="grid channels">
-            {% for c in channels %}
-                {{ channel(c) }}
+    <div>
+        <em>previously</em>
+        <ul>
+            {% for item in meta.previously %}
+                <li>{{ item|safe }}</li>
             {% endfor %}
         </ul>
-    </section>
+    </div>
+</div>
 
-    <section>
-        <h1>Blog</h1>
-        <iframe src="https://spaceandtim.es/"></iframe>
-        <p><a href="https://spaceandtim.es/">space & times</a></p>
-    </section>
+<section>
+    <h1>Research Threads</h1>
+    <ul class="grid channels">
+        {% for c in channels %}
+            {{ channel(c) }}
+        {% endfor %}
+    </ul>
+</section>
 
-    <section>
-        <h1>Work</h1>
-        <ul class="grid projects">
-            {% for p in projects %}
-                {{ project(p) }}
-            {% endfor %}
-        </ul>
-    </section>
+<section id="blog">
+    <h1>Recent Posts</h1>
+    <h2>from <a href="https://spaceandtim.es/">space & times</a></h2>
+    <div id="posts"></div>
+</section>
 
-    <section>
-        <h1>Past Clients</h1>
-        <ul class="grid clients">
-            {% for c in clients %}
-                {{ client(c) }}
-            {% endfor %}
-        </ul>
-    </section>
+<section>
+    <h1>Work</h1>
+    <ul class="grid projects">
+        {% for p in projects %}
+            {{ project(p) }}
+        {% endfor %}
+    </ul>
+</section>
 
-    <section>
-        <h1>Stalled & Unfinished</h1>
-        <ul class="grid projects">
-            {% for p in stalled %}
-                {{ project(p) }}
-            {% endfor %}
-        </ul>
-    </section>
+<section>
+    <h1>Past Clients</h1>
+    <ul class="grid clients">
+        {% for c in clients %}
+            {{ client(c) }}
+        {% endfor %}
+    </ul>
+</section>
+
+<section>
+    <h1>Stalled & Unfinished</h1>
+    <ul class="grid projects">
+        {% for p in stalled %}
+            {{ project(p) }}
+        {% endfor %}
+    </ul>
+</section>
+
+<script src="/js/rss-parser.js"></script>
+<script>
+let parser = new RSSParser();
+parser.parseURL('https://spaceandtim.es/rss/rss.xml', function(err, feed) {
+  let postsEl = document.getElementById('posts');
+  feed.items.slice(0, 5).forEach(function(entry) {
+    let postEl = document.createElement('article');
+    let titleEl = document.createElement('h1');
+    let linkEl = document.createElement('a');
+    let metaEl = document.createElement('h2');
+    linkEl.href = entry.link;
+    linkEl.innerText = entry.title;
+    metaEl.innerText = entry.pubDate.slice(0, -3);
+    titleEl.appendChild(linkEl);
+    postEl.appendChild(titleEl);
+    postEl.appendChild(metaEl);
+    postsEl.appendChild(postEl);
+  });
+});
+</script>
 {% endblock %}

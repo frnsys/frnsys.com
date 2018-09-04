@@ -1,6 +1,6 @@
 #!/bin/bash
 
-while inotifywait ./ --exclude .build/; do
+while inotifywait ./ --exclude '\.*(build|swp|swo)'; do
     echo "Building..."
     python3 build.py
 done
