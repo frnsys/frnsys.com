@@ -69,12 +69,11 @@ if __name__ == '__main__':
 
     # index page
     templ = env.get_template('index.html')
-    meta = yaml.load(open('meta.yaml', 'r'))
-    projects = yaml.load(open('projects.yaml', 'r'))
-    stalled = yaml.load(open('stalled.yaml', 'r'))
-    channels = yaml.load(open('channels.yaml', 'r'))
-    clients = yaml.load(open('clients.yaml', 'r'))
-    html = templ.render(projects=projects, stalled=stalled, channels=channels, meta=meta, clients=clients)
+    data = {}
+    for k in ['meta', 'projects', 'stalled',
+              'channels', 'clients', 'writing']:
+        data[k] = yaml.load(open('{}.yaml'.format(k), 'r'))
+    html = templ.render(**data)
     with open(os.path.join(BUILD_DIR, 'index.html'), 'w') as f:
         f.write(html)
 

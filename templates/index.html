@@ -42,7 +42,7 @@
     <h1>Francis Tseng</h1>
     <h2>design # dev # data</h2>
     <ul class="links">
-        <li><a href="http://spaceandtim.es">writing</a></li>
+        <li><a href="http://spaceandtim.es">blog</a></li>
         <li><a href="https://www.are.na/francis-tseng">are.na</a></li>
         <li><a href="https://twitter.com/frnsys">twitter</a></li>
         <li><a href="https://github.com/frnsys/">github</a></li>
@@ -102,6 +102,19 @@
     <ul class="grid clients">
         {% for c in clients %}
             {{ client(c) }}
+        {% endfor %}
+    </ul>
+</section>
+
+<section>
+    <h1>Writing</h1>
+    <ul class="grid writing">
+        {% for w in writing %}
+            <article>
+                <h1><a href="{{ w.url }}">{{ w.title }}</a></h1>
+                <h2>{{ w.pub }}</h2>
+                <p>{{ w.desc }}</p>
+            </article>
         {% endfor %}
     </ul>
 </section>
