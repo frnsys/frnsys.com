@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Nunito+Sans:400,400i,700,700i|Muli');
+@import url('https://fonts.googleapis.com/css?family=Nunito+Sans:400,400i,700,700i');
 
 ::-moz-selection { background: #213cff; color: #fff; text-shadow: none; }
 ::selection { background: #213cff; color: #fff; text-shadow: none; }
@@ -10,15 +10,18 @@
 }
 
 html, body {
-  background: #f3f3f3;
+  background: #fff;
   margin: 0;
   padding: 0;
   text-align: center;
   font-family: 'Nunito Sans', sans-serif;
 }
 
+body {
+  padding: 0 0 10em;
+}
+
 h1, h1 a, h1 a:visited {
-  font-family: 'Muli';
   font-weight: normal;
   font-size: 1em;
   text-align: center;
@@ -31,53 +34,44 @@ h2 {
   color: rgba(0,0,0,0.4);
 }
 section {
-  margin-top: 8em;
+  max-width: 520px;
+  margin: 4em auto 0;
+  padding: 0 1em;
 }
 section > h1 {
   font-size: 2em;
 }
-.grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  justify-items: center;
-  vertical-align: top;
-  max-width: 1280px;
+
+.item {
   width: 100%;
-  padding: 0 2em;
-  margin: 2em auto 0;
-}
-.grid-item {
-  width: 100%;
-  margin: 0em 3em 2em;
   display: flex;
-  max-width: 520px;
 }
-.grid-item h1 {
+.item h1 {
   margin: 0;
   text-align: left;
   font-size: 1.6em;
   line-height: 1;
 }
-.grid-item p {
+.item p {
   padding: 0;
   text-align: left;
 }
-.grid-item figure {
-  width: 150px;
-  min-width: 150px;
+.item figure {
+  width: 52px;
+  min-width: 52px;
   position: relative;
-  margin: 0 0 1em 0;
+  margin: 0;
 }
-.grid-item figure img {
+.item figure img {
   width: 100%;
   box-shadow: 2px 2px 8px rgba(0,0,0,0.2);
   transition: all 0.4s;
-  border-radius: 1em;
+  border-radius: 0.3em;
 }
-.grid-item figure img:hover {
+.item figure img:hover {
   box-shadow: 2px 2px 8px rgba(0,0,0,0.4);
 }
-.grid-item-info {
+.item-info {
   margin-left: 1.5em;
 }
 
@@ -99,15 +93,21 @@ section > h1 {
   line-height: 1.8;
 }
 .channel figure {
-  height: 200px;
+  height: 64px;
 }
 .channel figure img {
   object-fit: cover;
   height: 100%;
 }
 
+.project {
+  padding: 1em;
+}
 .project h1 a {
   color: #111;
+}
+.project:hover {
+  background: #fff36b;
 }
 .project:hover h1 a {
   color: #213cff;
@@ -117,28 +117,53 @@ section > h1 {
   text-align: left;
 }
 
+.client {
+  margin-bottom: 1em;
+}
+.client a:visited,
 .client h1:hover a {
   color: #213cff;
 }
 
-#garden {
-  margin-bottom: 6em;
-}
-#garden img {
-  width: 400px;
-}
-
 header {
-  padding: 2em 2em 6em 2em;
+  padding: 0.25em;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: #777;
+  color: #fff;
+  z-index: 1;
+  text-align: left;
+}
+header > div {
+  margin: 0 auto;
+  display: flex;
+  width: 100%;
+  max-width: 720px;
+}
+header .title, header .links {
+  flex: 1;
+}
+header a, header a:visited {
+  color: #fff;
+}
+header .title a, header .title a:visited {
+  text-decoration: none;
 }
 .brand {
-  width: 140px;
+  width: 32px;
+  vertical-align: middle;
 }
 
 ul, li {;
   margin: 0;
   padding: 0;
   list-style-type: none;
+}
+.links {
+  line-height: 2;
+  text-align: right;
 }
 .links li {
   display: inline-block;
@@ -171,12 +196,8 @@ img {
 #blog h2 {
   margin-top: 0;
 }
-#posts {
-  padding: 0 2em;
-}
 article {
   text-align: left;
-  max-width: 600px;
   margin: 0 auto 2em;
 }
 article h1 {
@@ -196,7 +217,12 @@ article h2 {
   margin-top: 0;
 }
 
+.writing h1 {
+  font-size: 1.4em;
+}
+
 .meta {
+  padding-top: 5em;
   text-align: center;
 }
 .meta > div {
@@ -243,50 +269,21 @@ iframe {
 }
 
 @media (max-width: 900px) {
+  header {
+    position: static;
+    display: block;
+  }
+  .links {
+    text-align: center;
+  }
   .meta li {
     width: 100%;
     padding: 0 2em;
   }
-  .grid {
-    grid-template-columns: repeat(1, 1fr);
+  .project {
+    padding: 1em 0;
   }
-}
-
-@media (max-width: 480px) {
-  .grid-item {
-    display: block;
-    max-width: 300px;
-    width: 100%;
-    margin: 0 0 5em 0;
-  }
-  .grid-item figure {
-    width: 200px;
-    margin: 0 auto 1.5em auto;
-  }
-  .grid-item h1 {
-    text-align: center;
-    font-size: 1.2em;
-  }
-  .grid-item h2 {
-    text-align: center;
-  }
-  .grid-item-info {
-    margin: 0;
-  }
-  .channel p {
-    text-align: center;
-  }
-  .channel figure {
-    height: 240px;
-  }
-  .client {
-    margin-bottom: 2em;
-  }
-  .client h1 {
-    font-size: 1.6em;
-    line-height: 1.3;
-  }
-  .client h1 a {
-    border-bottom: 2px solid #111;
+  .project:hover {
+    background: none;
   }
 }

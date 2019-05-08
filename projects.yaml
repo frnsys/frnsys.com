@@ -1,11 +1,16 @@
+- name: matter.farm
+  tags: ai, drugs, chemistry, law
+  desc: A system that algorithmically generates potential new drug compounds for a set of target receptors and estimates their therapeutic use. The generated compounds function as prior art, keeping them in the public domain away from predatory pharmaceutical business practices. W/ Sean Raspet for Rhizome's Seven-on-Seven (2018, Beijing). <a href='https://spaceandtim.es/projects/matter_farm/'>Write-up here</a>
+  url: http://matter.farm
+  img: matter.jpg
 - name: hyperdocs
   tags: tool, p2p
-  desc: A proof-of-concept for p2p collaborative text editing using the Dat protocol. Currently only supports plain text editing; rich text support is in progress
+  desc: A proof-of-concept for p2p collaborative text editing using the Dat protocol, so groups can work together without relying on Google. Currently only supports plain text editing; rich text support is experimental/unstable
   img: hyperdocs.png
   url: https://github.com/frnsys/hyperdocs/
-- name: Cell
+- name: cell.farm
   tags: blockchain, simulation
-  desc: A whitepaper describing a collective computing project for the atomic simulation of a single human cell and distributing subsequent medical research revenue, w/ Sean Raspet for Rhizome's Seven-on-Seven
+  desc: A whitepaper describing a collective computing project for the atomic simulation of a single human cell and distributing subsequent medical research revenue, w/ Sean Raspet for Rhizome's Seven-on-Seven (2018, NYC)
   img: cell.png
   url: http://cell.farm/
 - name: Transit Demand Simulation
@@ -15,7 +20,7 @@
   url: https://github.com/frnsys/transit_demand_model
 - name: PolicySpace
   tags: economics, geospatial, simulation
-  desc: An open agent-based model with three markets and a tax scheme that empirically simulates 46 Brazilian metropolitan regions, developed with Bernardo Furtado with the Institute for Applied Economic Research.
+  desc: An open agent-based model with three markets and a tax scheme that empirically simulates 46 Brazilian metropolitan regions, developed with Bernardo Furtado at the Institute for Applied Economic Research.
   img: policyspace.png
   url: http://www.ipea.gov.br/portal/index.php?option=com_content&view=article&id=33132&Itemid=433
 - name: cartog
@@ -24,8 +29,8 @@
   img: cartog.png
   url: https://github.com/frnsys/cartog
 - name: Bail Bloc
-  tags: crypto, blockchain
-  desc: A Monero miner for using excess computing power and crypto speculation to collectively post bail for low-income people, developed with Grayson Earle, Maya Binyam, JB Rubinovitz, Sam Lavigne, Rachel Rosenfelt, Madeleine Varner, Devin Kenny, and the rest of Dark Inquiry. <a href='https://bailbloc.thenewinquiry.com/'>Download here</a>
+  tags: crypto, blockchain, abolition
+  desc: A Monero miner for using excess computing power and crypto-speculation to collectively post bail for low-income people, developed with Grayson Earle, Maya Binyam, JB Rubinovitz, Sam Lavigne, Rachel Rosenfelt, Madeleine Varner, Devin Kenny, and the rest of Dark Inquiry. <a href='https://bailbloc.thenewinquiry.com/'>Download here</a>
   img: bailbloc.png
   url: https://bailbloc.thenewinquiry.com/
 - name: CyberSym
@@ -40,12 +45,12 @@
   url: https://cybernetics.social/
 - name: Conspiracy Bot
   tags: machine learning, computer vision, nlp
-  desc: A bot that generates conspiracies. For The New Inquiry. <a href="http://spaceandtim.es/projects/conspiracy/">Technical breakdown here</a>
+  desc: A bot that generates conspiracy theories by watching the news and being oversensitive to patterns (apophenia). For The New Inquiry. <a href="http://spaceandtim.es/projects/conspiracy/">Technical breakdown here</a>
   url: https://conspiracy.thenewinquiry.com
   img: conspiracy_bot.png
 - name: White Collar Crime Risk Zones
   tags: prediction, crime
-  desc: A predictive policing app for white collar crime. Collab w/ Sam Lavigne & Brian Clifton for The New Inquiry
+  desc: A predictive policing app for white collar crime. "Unlike typical predictive policing apps which criminalize poverty, White Collar Crime Risk Zones criminalizes wealth." Collab w/ Sam Lavigne & Brian Clifton for The New Inquiry
   url: https://whitecollar.thenewinquiry.com
   img: wccrz.jpg
 - name: High Rise/Party Fortress

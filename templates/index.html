@@ -1,11 +1,11 @@
 {% macro project(p) -%}
-    <li class="grid-item project">
+    <li class="item project">
         <a href="{{ p.url }}">
             <figure>
                 <img src="/assets/projects/{{ p.img }}" alt="{{ p.name }}">
             </figure>
         </a>
-        <div class="grid-item-info">
+        <div class="item-info">
             <h1><a href="{{ p.url }}">{{ p.name }}</a></h1>
             <h2>{{ p.tags }}</h2>
             <p>{{ p.desc }}</p>
@@ -14,17 +14,17 @@
 {%- endmacro %}
 
 {% macro client(c) -%}
-    <li class="grid-item client">
+    <li class="item client">
         <h1><a href="{{ c.url }}">{{ c.name }}</a></h1>
     </li>
 {%- endmacro %}
 
 {% macro channel(c) -%}
-    <li class="grid-item channel">
+    <li class="item channel">
         <figure>
             <img src="/assets/research/{{ c.background }}" alt="{{ c.name }}">
         </figure>
-        <div class="grid-item-info">
+        <div class="item-info">
             <h1>{{ c.name }}</h1>
             <p>
                 {% for u in c.urls %}
@@ -38,17 +38,33 @@
 {% extends 'layout.html' %}
 {% block content %}
 <header>
-    <img src="/assets/brand.gif" class="brand">
-    <h1>Francis Tseng</h1>
-    <h2>design # dev # data</h2>
-    <ul class="links">
-        <li><a href="http://spaceandtim.es">blog</a></li>
-        <li><a href="https://www.are.na/francis-tseng">are.na</a></li>
-        <li><a href="https://twitter.com/frnsys">twitter</a></li>
-        <li><a href="https://github.com/frnsys/">github</a></li>
-    </ul>
+    <div>
+        <div class="title">
+            <img src="/assets/brand.gif" class="brand">
+            <a href="#meta">Francis Tseng</a>
+        </div>
+        <ul class="links">
+            <!-- <li><a href="#research">research</a></li> -->
+            <li><a href="#writing">writing</a></li>
+            <li><a href="#work">work</a></li>
+            <li><a href="#clients">clients</a></li>
+            <li><a href="http://spaceandtim.es">blog</a></li>
+            <li><a href="https://www.are.na/francis-tseng">are.na</a></li>
+            <li><a href="https://twitter.com/frnsys">twitter</a></li>
+            <li><a href="https://github.com/frnsys/">github</a></li>
+        </ul>
+    </div>
 </header>
+<a name="meta"></a>
 <div class="meta">
+    <div>
+        <em>previously</em>
+        <ul>
+            {% for item in meta.previously %}
+                <li>{{ item|safe }}</li>
+            {% endfor %}
+        </ul>
+    </div>
     <div>
         <em>currently</em>
         <ul>
@@ -58,29 +74,22 @@
         </ul>
         <div class="highlight">
             <h3>want to work together?</h3>
-            <p><em>specialties</em>: simulation, machine learning, design, forecasting, tool building, data analysis, game design, general software development, education</p>
-            <p><em>looking for projects in the domains of</em>: agriculture, recycling, voting, transit/mobility, energy, climate, logistics, algorithmic accountability, cryptoeconomics, journalism, ...</p>
+            <p><em>specialties</em>: simulation, machine learning, design, forecasting, tool building, data analysis, game design, system design, software development, education, general technology</p>
+            <p><em>looking for projects in the domains of</em>: agriculture, p2p, autonomy, recycling, materials, voting, transit/mobility, energy, climate, logistics, algorithmic accountability, cryptoeconomics, journalism, ...</p>
             <p>contact me at <em>f[at]frnsys.com</em></p>
         </div>
     </div>
-    <div>
-        <em>previously</em>
-        <ul>
-            {% for item in meta.previously %}
-                <li>{{ item|safe }}</li>
-            {% endfor %}
-        </ul>
-    </div>
 </div>
 
-<section>
-    <h1>Research Threads</h1>
-    <ul class="grid channels">
-        {% for c in channels %}
-            {{ channel(c) }}
-        {% endfor %}
-    </ul>
-</section>
+<!-- <a name="research"></a> -->
+<!-- <section> -->
+<!--     <h1>Research Threads</h1> -->
+<!--     <ul class="channels"> -->
+<!--         {% for c in channels %} -->
+<!--             {{ channel(c) }} -->
+<!--         {% endfor %} -->
+<!--     </ul> -->
+<!-- </section> -->
 
 <section id="blog">
     <h1>Recent Posts</h1>
@@ -88,27 +97,10 @@
     <div id="posts"></div>
 </section>
 
-<section>
-    <h1>Work</h1>
-    <ul class="grid projects">
-        {% for p in projects %}
-            {{ project(p) }}
-        {% endfor %}
-    </ul>
-</section>
-
-<section>
-    <h1>Past Clients</h1>
-    <ul class="grid clients">
-        {% for c in clients %}
-            {{ client(c) }}
-        {% endfor %}
-    </ul>
-</section>
-
+<a name="writing"></a>
 <section>
     <h1>Writing</h1>
-    <ul class="grid writing">
+    <ul class="writing">
         {% for w in writing %}
             <article>
                 <h1><a href="{{ w.url }}">{{ w.title }}</a></h1>
@@ -119,18 +111,24 @@
     </ul>
 </section>
 
+<a name="work"></a>
 <section>
-    <h1>Stalled & Unfinished</h1>
-    <ul class="grid projects">
-        {% for p in stalled %}
+    <h1>Work</h1>
+    <ul class="projects">
+        {% for p in projects %}
             {{ project(p) }}
         {% endfor %}
     </ul>
 </section>
 
-<section id="garden">
-    <h1>Garden</h1>
-    <img src="/plants.jpg">
+<a name="clients"></a>
+<section>
+    <h1>Past Clients</h1>
+    <ul class="clients">
+        {% for c in clients %}
+            {{ client(c) }}
+        {% endfor %}
+    </ul>
 </section>
 
 <script src="/js/rss-parser.js"></script>
