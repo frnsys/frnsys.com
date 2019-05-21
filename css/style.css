@@ -57,7 +57,7 @@ section > h1 {
   text-align: left;
 }
 .item figure {
-  width: 52px;
+  width: 142px;
   min-width: 52px;
   position: relative;
   margin: 0;
@@ -131,10 +131,11 @@ header {
   top: 0;
   left: 0;
   right: 0;
-  background: #777;
-  color: #fff;
+  background: #fff;
+  color: #000;
   z-index: 1;
   text-align: left;
+  border-bottom: 1px solid #000;
 }
 header > div {
   margin: 0 auto;
@@ -145,8 +146,8 @@ header > div {
 header .title, header .links {
   flex: 1;
 }
-header a, header a:visited {
-  color: #fff;
+header a, header a:visited, header a:hover {
+  color: #000;
 }
 header .title a, header .title a:visited {
   text-decoration: none;
@@ -271,9 +272,11 @@ iframe {
 @media (max-width: 900px) {
   header {
     position: static;
+  }
+  header > div {
     display: block;
   }
-  .links {
+  header .title, .links {
     text-align: center;
   }
   .meta li {
@@ -285,5 +288,14 @@ iframe {
   }
   .project:hover {
     background: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .item figure {
+    display: none;
+  }
+  .item-info {
+    margin-left: 0;
   }
 }
