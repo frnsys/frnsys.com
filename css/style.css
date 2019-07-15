@@ -272,15 +272,6 @@ iframe {
 }
 
 @media (max-width: 900px) {
-  header {
-    position: static;
-  }
-  header > div {
-    display: block;
-  }
-  header .title, .links {
-    text-align: center;
-  }
   .project {
     padding: 1em 0;
   }
