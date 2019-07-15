@@ -1,15 +1,18 @@
 {% macro project(p) -%}
     <li class="item project">
-        <a href="{{ p.url }}">
-            <figure>
-                <img src="/assets/projects/{{ p.img }}" alt="{{ p.name }}">
-            </figure>
-        </a>
-        <div class="item-info">
-            <h1><a href="{{ p.url }}">{{ p.name }}</a></h1>
-            <h2>{{ p.tags }}</h2>
-            <p>{{ p.desc }}</p>
+        <div>
+            <a href="{{ p.url }}">
+                <figure>
+                    <img src="/assets/projects/{{ p.img }}" alt="{{ p.name }}">
+                </figure>
+            </a>
+            <div class="item-info">
+                <h1><a href="{{ p.url }}">{{ p.name }}</a></h1>
+                <h2>{{ p.tags }}</h2>
+            </div>
         </div>
+        <p class="item-desc">{{ p.desc }}</p>
+        <div class="hover-info"><p>{{ p.desc }}</p></div>
     </li>
 {%- endmacro %}
 
@@ -55,7 +58,7 @@
         <div class="highlight">
             <b>Want to work together?</b>
             <p><em>Specialties</em>: I design and implement simulations and games, train machine learning models, design and implement procedural and AI systems, develop software &amp; web applications, and build software and automation tools of all kinds.</p>
-            <p><em>Project interests</em>: climate, ecology, agriculture, p2p, autonomy, recycling, materials, voting, transit/mobility, energy, logistics, remote sensing, algorithmic accountability, distributive economics, ... in general, projects which help to establish an equitable and ecological world.</p>
+            <p><em>Project interests</em>: climate, ecology, agriculture, p2p, autonomy, recycling, materials, voting, transit/mobility, energy, logistics, remote sensing, algorithmic accountability, distributive economics, ... projects which help to establish an equitable and ecological world.</p>
             <p>If you are an activist organization, I'm usually happy to donate time to help.</p>
             <p>Contact me at <em>f[at]frnsys.com</em>.</p>
         </div>

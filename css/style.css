@@ -48,7 +48,6 @@ section > h1 {
 
 .item {
   width: 100%;
-  display: flex;
 }
 .item h1 {
   margin: 0;
@@ -61,8 +60,7 @@ section > h1 {
   text-align: left;
 }
 .item figure {
-  width: 142px;
-  min-width: 52px;
+  width: 34px;
   position: relative;
   margin: 0;
 }
@@ -134,11 +132,45 @@ section > h1 {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
+  border: 1px solid black;
 }
 .project {
   padding: 1em;
   max-width: 100%;
-  width: 380px;
+  width: auto;
+  border: 1px solid black;
+  flex: 1 0 auto;
+  cursor: help;
+}
+.project > div {
+  display: flex;
+}
+.project .item-desc,
+.project .hover-info {
+  display: none;
+}
+.project .hover-info {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  background: #000;
+  color: #fff;
+  padding: 1em;
+  margin: 0;
+  border-top: 2px solid black;
+}
+.project .hover-info p {
+  max-width: 620px;
+  margin: 0 auto;
+}
+.project .hover-info a,
+.project .hover-info a:visited {
+  color: #fff;
+}
+.project:hover .hover-info {
+  display: block;
 }
 .project h1 a {
   color: #111;
@@ -271,20 +303,14 @@ iframe {
   box-shadow: 2px 2px 8px rgba(0,0,0,0.1);
 }
 
-@media (max-width: 900px) {
+@media (max-width: 720px) {
   .project {
-    padding: 1em 0;
+    flex: 100%;
   }
-  .project:hover {
-    background: none;
+  .project .item-desc {
+    display: block;
   }
-}
-
-@media (max-width: 480px) {
-  .item figure {
+  .project:hover .hover-info {
     display: none;
-  }
-  .item-info {
-    margin-left: 0;
   }
 }
