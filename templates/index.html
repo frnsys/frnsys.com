@@ -40,14 +40,9 @@
 <header>
     <div>
         <div class="title">
-            <img src="/assets/brand.gif" class="brand">
-            <a href="#meta">Francis Tseng</a>
+            <a href="#top">Francis Tseng</a>
         </div>
         <ul class="links">
-            <!-- <li><a href="#research">research</a></li> -->
-            <li><a href="#writing">writing</a></li>
-            <li><a href="#work">work</a></li>
-            <li><a href="#clients">clients</a></li>
             <li><a href="http://spaceandtim.es">blog</a></li>
             <li><a href="https://www.are.na/francis-tseng">are.na</a></li>
             <li><a href="https://twitter.com/frnsys">twitter</a></li>
@@ -55,63 +50,42 @@
         </ul>
     </div>
 </header>
-<a name="meta"></a>
+<a name="top"></a>
 <div class="meta">
     <div>
-        <em>previously</em>
-        <ul>
-            {% for item in meta.previously %}
-                <li>{{ item|safe }}</li>
-            {% endfor %}
-        </ul>
-    </div>
-    <div>
-        <em>currently</em>
-        <ul>
-            {% for item in meta.currently %}
-                <li>{{ item|safe }}</li>
-            {% endfor %}
-        </ul>
+        <div class="current">
+            <img src="/assets/brand.gif" class="brand">
+            Currently {{ meta.currently|join(', ')|safe }}, and freelancing.</div>
         <div class="highlight">
-            <h3>want to work together?</h3>
-            <p><em>specialties</em>: simulation, machine learning, design, forecasting, tool building, data analysis, game design, system design, software development, education, general technology</p>
-            <p><em>looking for projects in the domains of</em>: agriculture, p2p, autonomy, recycling, materials, voting, transit/mobility, energy, climate, logistics, algorithmic accountability, cryptoeconomics, journalism, ...</p>
-            <p>contact me at <em>f[at]frnsys.com</em></p>
+            <b>Want to work together?</b>
+            <p><em>Specialties</em>: I design and implement simulations and games, train machine learning models, design and implement procedural and AI systems, develop software &amp; web applications, and build software and automation tools of all kinds.</p>
+            <p><em>Project interests</em>: climate, ecology, agriculture, p2p, autonomy, recycling, materials, voting, transit/mobility, energy, logistics, remote sensing, algorithmic accountability, distributive economics, ... in general, projects which help to establish an equitable and ecological world.</p>
+            <p>If you are an activist organization, I'm usually happy to donate time to help.</p>
+            <p>Contact me at <em>f[at]frnsys.com</em>.</p>
         </div>
     </div>
 </div>
 
-<!-- <a name="research"></a> -->
-<!-- <section> -->
-<!--     <h1>Research Threads</h1> -->
-<!--     <ul class="channels"> -->
-<!--         {% for c in channels %} -->
-<!--             {{ channel(c) }} -->
-<!--         {% endfor %} -->
-<!--     </ul> -->
-<!-- </section> -->
+<section id="writing">
+    <section id="blog">
+        <h1>Recent Posts</h1>
+        <div id="posts"></div>
+    </section>
 
-<section id="blog">
-    <h1>Recent Posts</h1>
-    <h2>from <a href="https://spaceandtim.es/">space & times</a></h2>
-    <div id="posts"></div>
+    <section>
+        <h1>Writing</h1>
+        <ul class="writing">
+            {% for w in writing %}
+                <article>
+                    <h1><a href="{{ w.url }}">{{ w.title }}</a></h1>
+                    <h2>{{ w.pub }}</h2>
+                    <p>{{ w.desc }}</p>
+                </article>
+            {% endfor %}
+        </ul>
+    </section>
 </section>
 
-<a name="writing"></a>
-<section>
-    <h1>Writing</h1>
-    <ul class="writing">
-        {% for w in writing %}
-            <article>
-                <h1><a href="{{ w.url }}">{{ w.title }}</a></h1>
-                <h2>{{ w.pub }}</h2>
-                <p>{{ w.desc }}</p>
-            </article>
-        {% endfor %}
-    </ul>
-</section>
-
-<a name="work"></a>
 <section>
     <h1>Work</h1>
     <ul class="projects">
@@ -121,12 +95,30 @@
     </ul>
 </section>
 
-<a name="clients"></a>
+<section id="past">
+    <section>
+        <h1>Previously</h1>
+        <ul class="previously">
+            {% for item in meta.previously %}
+                <li>{{ item|safe }}</li>
+            {% endfor %}
+        </ul>
+    </section>
+    <section>
+        <h1>Past Clients</h1>
+        <ul class="clients">
+            {% for c in clients %}
+                {{ client(c) }}
+            {% endfor %}
+        </ul>
+    </section>
+</section>
+
 <section>
-    <h1>Past Clients</h1>
-    <ul class="clients">
-        {% for c in clients %}
-            {{ client(c) }}
+    <h1>Research Threads</h1>
+    <ul class="channels">
+        {% for c in channels %}
+            {{ channel(c) }}
         {% endfor %}
     </ul>
 </section>

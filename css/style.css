@@ -13,8 +13,12 @@ html, body {
   background: #fff;
   margin: 0;
   padding: 0;
-  text-align: center;
   font-family: 'Nunito Sans', sans-serif;
+}
+
+main, header > div {
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 body {
@@ -34,12 +38,12 @@ h2 {
   color: rgba(0,0,0,0.4);
 }
 section {
-  max-width: 520px;
   margin: 4em auto 0;
   padding: 0 1em;
 }
 section > h1 {
   font-size: 2em;
+  text-decoration: underline;
 }
 
 .item {
@@ -75,42 +79,72 @@ section > h1 {
   margin-left: 1.5em;
 }
 
+.channels {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+.channel {
+  width: 320px;
+  max-width: 100%;
+  display: block;
+  margin-bottom: 2em;
+}
+.channel .item-info {
+  margin: 0;
+}
 .channel a, .channel a:visited {
-  color: #fff;
+  color: #000;
   margin: 0 0.2em;
   text-decoration: none;
-  background: #0ab129;
-  padding: 0.1em 0.2em;
-  border-radius: 0.2em;
   white-space: nowrap;
+  border-bottom: 1px solid #213cff;
 }
 .channel a:hover {
-  color: #fff;
-  background: #213cff;
+  border-bottom: 2px solid #213cff;
 }
 .channel p {
   font-size: 0.9em;
   line-height: 1.8;
 }
 .channel figure {
-  height: 64px;
+  height: 128px;
+  width: 100%;
 }
 .channel figure img {
   object-fit: cover;
   height: 100%;
 }
+.channel h1 {
+  margin-top: 0.75em;
+  font-size: 1.2em;
+}
 
+#writing, #past {
+  display: flex;
+  flex-wrap: wrap;
+}
+#writing > section,
+#past > section {
+  width: 580px;
+  max-width: 100%;
+}
+
+.projects {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
 .project {
   padding: 1em;
+  max-width: 100%;
+  width: 380px;
 }
 .project h1 a {
   color: #111;
 }
 .project:hover {
-  background: #fff36b;
-}
-.project:hover h1 a {
-  color: #213cff;
+  background: rgba(194, 198, 255, 0.41);
 }
 .project h2 {
   margin-top: 0.2em;
@@ -131,20 +165,21 @@ header {
   top: 0;
   left: 0;
   right: 0;
-  background: #fff;
+  background: #fafafa;
   color: #000;
   z-index: 1;
   text-align: left;
-  border-bottom: 1px solid #000;
+  box-shadow: 0px 1px 6px rgba(0,0,0,0.1);
 }
 header > div {
   margin: 0 auto;
   display: flex;
   width: 100%;
-  max-width: 720px;
+  padding: 0 1.5em;
 }
 header .title, header .links {
   flex: 1;
+  line-height: 2;
 }
 header a, header a:visited, header a:hover {
   color: #000;
@@ -154,7 +189,7 @@ header .title a, header .title a:visited {
 }
 .brand {
   width: 32px;
-  vertical-align: middle;
+  height: auto;
 }
 
 ul, li {;
@@ -163,7 +198,6 @@ ul, li {;
   list-style-type: none;
 }
 .links {
-  line-height: 2;
   text-align: right;
 }
 .links li {
@@ -174,9 +208,6 @@ ul, li {;
 
 a, a:visited {
   color: #213cff;
-}
-a:hover {
-  color: #ec1d1d;
 }
 
 hr {
@@ -193,9 +224,6 @@ img {
 
 #blog h1 {
   margin-bottom: 0;
-}
-#blog h2 {
-  margin-top: 0;
 }
 article {
   text-align: left;
@@ -223,39 +251,31 @@ article h2 {
 }
 
 .meta {
-  padding-top: 5em;
-  text-align: center;
-}
-.meta > div {
-  text-align: left;
-  display: inline-block;
-  vertical-align: top;
-  padding: 0 1em;
-  max-width: 360px;
-}
-.meta li:before {
-  content: "•";
-  padding-right: 0.4em;
-  color: red;
-}
-.meta li {
-  margin-bottom: 0.2em;
+  padding: 5em 1em 0;
 }
 .meta em {
-  color: #213cff;
+  font-weight: bold;
+  border-bottom: 1px solid #213cff;
 }
-.meta .highlight {
-  margin: 2em 0 3em 0;
-  padding: 0.1em 1.5em;
-  background: #d6d6d6;
-  border-radius: 0.5em;
+.current {
+  font-size: 2.2em;
 }
-.meta .highlight h3 {
-  font-weight: normal;
-  text-decoration: underline;
+.current img {
+  vertical-align: middle;
+  height: 30px;
+  margin-right: 0.1em;
+}
+.previously li {
+  margin-bottom: 0.75em;
+  font-size: 1.2em;
+}
+.highlight {
+  padding: 1em 1em 0.5em 1em;
+  background: #f6f6f6;
+  margin: 1em 0;
 }
 
-header, .projects, .meta {
+header, .projects {
   font-size: 0.9em;
 }
 
@@ -278,10 +298,6 @@ iframe {
   }
   header .title, .links {
     text-align: center;
-  }
-  .meta li {
-    width: 100%;
-    padding: 0 2em;
   }
   .project {
     padding: 1em 0;
