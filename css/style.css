@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Nunito+Sans:400,400i,700,700i');
+@import url('https://fonts.googleapis.com/css?family=Noto+Serif+JP:200|Nunito+Sans:400,400i,700,700i&display=swap');
 
 ::-moz-selection { background: #213cff; color: #fff; text-shadow: none; }
 ::selection { background: #213cff; color: #fff; text-shadow: none; }
@@ -160,32 +160,17 @@ section > h1 {
 }
 
 header {
-  padding: 0.25em;
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  background: #fafafa;
-  color: #000;
-  z-index: 1;
+  padding: 1.25em;
+}
+header h1 {
   text-align: left;
-  box-shadow: 0px 1px 6px rgba(0,0,0,0.1);
-}
-header > div {
-  margin: 0 auto;
-  display: flex;
-  width: 100%;
-  padding: 0 1.5em;
-}
-header .title, header .links {
-  flex: 1;
-  line-height: 2;
+  font-size: 3.5em;
+  font-weight: 200;
+  font-family: 'Noto Serif JP', serif;
+  margin-bottom: 0;
 }
 header a, header a:visited, header a:hover {
   color: #000;
-}
-header .title a, header .title a:visited {
-  text-decoration: none;
 }
 .brand {
   width: 32px;
@@ -196,9 +181,6 @@ ul, li {;
   margin: 0;
   padding: 0;
   list-style-type: none;
-}
-.links {
-  text-align: right;
 }
 .links li {
   display: inline-block;
