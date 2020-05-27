@@ -290,6 +290,29 @@ iframe {
   box-shadow: 2px 2px 8px rgba(0,0,0,0.1);
 }
 
+.shots {
+  display: flex;
+  flex-wrap: wrap;
+  jutsify-content: space-between;
+}
+.shots li {
+  flex: 32%;
+}
+.shots img {
+  max-width: 100%;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 0.25em;
+}
+.shots img:hover {
+  opacity: 0.75;
+}
+.more-link {
+  display: block;
+  text-align: center;
+}
+
 @media (max-width: 720px) {
   .project {
     flex: 100%;
@@ -299,5 +322,25 @@ iframe {
   }
   .project:hover .hover-info {
     display: none;
+  }
+  .shots li {
+    flex: 48%;
+  }
+}
+
+@media (max-width: 480px) {
+  .project > div {
+    display: block;
+  }
+  .project .item-info {
+    margin: 0;
+  }
+  .item figure {
+    margin: 0 auto 1em auto;
+    width: 100%;
+    max-width: 220px;
+  }
+  .shots {
+    display: block;
   }
 }

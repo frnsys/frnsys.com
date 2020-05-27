@@ -119,6 +119,12 @@
     </ul>
 </section>
 
+<section>
+    <h1>Recent Shots</h1>
+    <ul id="shots" class="shots"></ul>
+    <a class="more-link" href="https://www.are.na/francis-tseng/random-shots">More</a>
+</section>
+
 <script src="/js/rss-parser.js"></script>
 <script>
 let parser = new RSSParser();
@@ -138,5 +144,42 @@ parser.parseURL('https://spaceandtim.es/rss/rss.xml', function(err, feed) {
     postsEl.appendChild(postEl);
   });
 });
+</script>
+<script>
+function getJson(url, cb) {
+    fetch(url, {
+        method: 'GET',
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json'
+        }
+    })
+    .then((res) => res.json())
+    .then((json) => cb(json));
+}
+getJson('https://api.are.na/v2/channels/random-shots/thumb', (json) => {
+    let perPage = 25;
+    let total = json.length;
+    let lastPage = Math.ceil(total/perPage);
+    getJson(`https://api.are.na/v2/channels/random-shots?page=${lastPage}`, (json) => {
+        let shots = document.getElementById('shots');
+        json.contents.reverse();
+        json.contents.forEach((block) => {
+            let url = block.image.display.url;
+            let li = document.createElement('li');
+
+            let a = document.createElement('a');
+            a.href = `https://www.are.na/block/${block.id}`;
+
+            let img = document.createElement('img');
+            img.src = url;
+
+            a.appendChild(img);
+            li.appendChild(a);
+            shots.appendChild(li);
+        });
+    });
+});
+
 </script>
 {% endblock %}
