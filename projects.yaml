@@ -1,185 +1,187 @@
-- name: matter.farm
-  tags: ai, drugs, chemistry, law
-  desc: A system that algorithmically generates potential new drug compounds for a set of target receptors and estimates their therapeutic use. The generated compounds function as prior art, keeping them in the public domain away from predatory pharmaceutical business practices. W/ Sean Raspet for Rhizome's Seven-on-Seven (2018, Beijing). <a href='https://spaceandtim.es/projects/matter_farm/'>Write-up here</a>
-  url: http://matter.farm
-  img: matter.jpg
-- name: hyperdocs
-  tags: tool, p2p
-  desc: A proof-of-concept for p2p collaborative text editing using the Dat protocol, so groups can work together without relying on Google. Currently only supports plain text editing; rich text support is experimental/unstable
-  img: hyperdocs.png
-  url: https://github.com/frnsys/hyperdocs/
-- name: cell.farm
-  tags: blockchain, simulation
-  desc: A whitepaper describing a collective computing project for the atomic simulation of a single human cell and distributing subsequent medical research revenue, w/ Sean Raspet for Rhizome's Seven-on-Seven (2018, NYC)
-  img: cell.png
-  url: http://cell.farm/
-- name: Transit Demand Simulation
-  tags: transit, simulation
-  desc: A transit demand model for the Institute for Applied Economic Research, part of the PolicySpace model. Simulates public transit and private vehicle usage given a city's GTFS feed and available OpenStreetMap data
-  img: transit.png
-  url: https://github.com/frnsys/transit_demand_model
-- name: PolicySpace
-  tags: economics, geospatial, simulation
-  desc: An open agent-based model with three markets and a tax scheme that empirically simulates 46 Brazilian metropolitan regions, developed with Bernardo Furtado at the Institute for Applied Economic Research.
-  img: policyspace.png
-  url: http://www.ipea.gov.br/portal/index.php?option=com_content&view=article&id=33132&Itemid=433
-- name: cartog
-  tags: framework, simulation
-  desc: A Javascipt framework for creating management and system simulation games, developed for my Simulation & Cybernetics class at The New School
-  img: cartog.png
-  url: https://github.com/frnsys/cartog
-- name: Bail Bloc
-  tags: crypto, blockchain, abolition
-  desc: A Monero miner for using excess computing power and crypto-speculation to collectively post bail for low-income people, developed with Grayson Earle, Maya Binyam, JB Rubinovitz, Sam Lavigne, Rachel Rosenfelt, Madeleine Varner, Devin Kenny, and the rest of Dark Inquiry. <a href='https://bailbloc.thenewinquiry.com/'>Download here</a>
-  img: bailbloc.png
-  url: https://bailbloc.thenewinquiry.com/
-- name: CyberSym
-  tags: simulation, visualization
-  desc: A simulation to interact with the <a href="http://cybernetics.social/">Cybernetics Conference</a> <a href="http://cybernetics.social/library/">Library</a>, w/ Dan Taeyoung
-  img: cybersym.png
-  url: /cybersym
-- name: Cybernetics Conference
-  tags: conference
-  desc: A conference and library in NYC, 11/18/2017, on cybernetics, informatic systems, and social organization; organized with Sam Hart, Melanie Hoff, Sarah Hamerman, David Isaac Hecht, Dan Taeyoung, Charles Eppley, and Alexis Convento
-  img: cybercon.png
-  url: https://cybernetics.social/
-- name: Conspiracy Bot
-  tags: machine learning, computer vision, nlp
-  desc: A bot that generates conspiracy theories by watching the news and being oversensitive to patterns (apophenia). For The New Inquiry. <a href="http://spaceandtim.es/projects/conspiracy/">Technical breakdown here</a>
-  url: https://conspiracy.thenewinquiry.com
-  img: conspiracy_bot.png
-- name: White Collar Crime Risk Zones
-  tags: prediction, crime
-  desc: A predictive policing app for white collar crime. "Unlike typical predictive policing apps which criminalize poverty, White Collar Crime Risk Zones criminalizes wealth." Collab w/ Sam Lavigne & Brian Clifton for The New Inquiry
-  url: https://whitecollar.thenewinquiry.com
-  img: wccrz.jpg
-- name: High Rise/Party Fortress
-  tags: tool, simulation
-  desc: Tool for designing social-spatial simulations with an example project. Collab w/ Fei Liu & Dan Taeyoung
-  url: http://spaceandtim.es/projects/party_fortress
-  img: highrise.png
-- name: Polynomial Designer
-  tags: tool, math
-  desc: Tool for designing equations by drawing them
-  url: https://github.com/frnsys/polynomial_designer
-  img: polynomial_designer.png
-- name: Machine Learning for Artists Guides
-  tags: guides, teaching, machine learning
-  desc: A collection of introductory machine learning guides, w/ Gene Kogan
-  url: http://ml4a.github.io/guides/
-  img: ml4a_guides.jpg
-- name: Speculating Futures
-  tags: reading list
-  desc: A reading list around speculative fiction, technology, and politics
-  url: https://speculatingfutures.club
-  img: speculating_futures.png
-- name: Humans of Simulated New York
-  tags: simulation
-  desc: A participative agent-based economic simulation for speculating alternative economies, w/ Fei Liu
-  url: /hosny
-  img: hosny.png
-- name: cess
-  tags: framework, simulation
-  desc: A simple agent-based modeling framework, supporting distributed computation
-  url: https://github.com/frnsys/cess
-  img: cess.png
-- name: The Founder
-  tags: video game
-  desc: A dystopian business simulator - found a startup, pursue unbounded growth, and accidentally dystopia. <a href='http://thefounder.biz/play'>Play here</a>
-  url: http://thefounder.biz
-  img: the_founder.png
-- name: AI Notes
-  tags: notes
-  desc: A large set of notes introducing people with modest math backgrounds to artificial intelligence
-  url: http://frnsys.com/ai_notes/
-  img: ai_notes.jpg
-- name: Designing Digital Communities
-  tags: notes, teaching
-  desc: Digital community design notes for <a href="https://coralproject.net/">the Coral Project</a> and taught as a New School Journalism+Design course
-  url: http://frnsys.com/coral/
-  img: ddc.jpg
-- name: ML101
-  tags: workshop, teaching
-  desc: An introductory workshop to machine learning, around a dystopian sci-fi narrative
-  url: https://github.com/frnsys/ml101
-  img: ml101.jpg
-- name: saltbeef
-  tags: game
-  desc: A randomly-generated pokemon slack battling system
-  url: https://github.com/frnsys/saltbeef
-  img: saltbeef.png
-- name: Tao
-  tags: nlp
-  desc: The Tao Te Ching as "interpreted" by a recurrent neural network, trained on 94 English translations
-  url: https://github.com/frnsys/tao/blob/master/machine_tao.txt
-  img: tao.png
-- name: Pablo
-  tags: algo music
-  desc: It seems like the next Avalanches album is never coming out, so here is a program that will create mix-based music for you
-  url: https://github.com/frnsys/pablo
-  img: pablo.png
-- name: News Automata
-  tags: teaching
-  desc: A New School Journalism+Design course on journalism, algorithms, and automation
-  url: http://www.lang.edu/courses/coursedesc.cfm?TERM=201410&ID=7822
-  img: news_automata.png
-- name: hscluster
-  tags: algorithm
-  desc: A graph-based clustering approach which does not require specifying the number of clusters
-  url: https://github.com/frnsys/hscluster
-  img: hscluster.png
-- name: nomadic
-  tags: tool
-  desc: A very lightweight markdown note management platform
-  url: http://spaceandtim.es/projects/nomadic
-  img: nomadic.png
-- name: port
-  tags: tool
-  desc: A very lightweight markdown blogging platform
-  url: http://spaceandtim.es/projects/port
-  img: port.jpg
-- name: pasture
-  tags: tool
-  desc: Pasture is a tool for teaching Python without needing to deal with development environments (bleh)
-  url: http://spaceandtim.es/projects/pasture
-  img: pasture.jpg
-- name: Mob
-  tags: simulation
-  desc: Massive communication - simulated chat rooms of hundreds to thousands of automated participants (Twitch chat simulator)
-  url: https://github.com/frnsys/mob
-  img: mob.jpg
-- name: Argos
-  tags: nlp
-  desc: Argos (prototype) is an automated system that keeps up with the news for you
-  url: /argos
-  img: argos.png
-- name: Neuroviz
-  tags: visualization
-  desc: An exploration into translating network topology into VR space, inspired by Neuromancer
-  url: http://spaceandtim.es/projects/neuromancer_network_visualizer
-  img: neuroviz.gif
-- name: Brain
-  tags: nlp
-  desc: Outsource your social media personality to an algorithm
-  url: /brain
-  img: brain.png
-- name: Parrott
-  tags: nlp
-  desc: A pseudo-intelligent NLP (naive bayes) bot that learns your (re)tweeting habits
-  url: /parrott
-  img: parrott.jpg
-- name: Golden Ages
-  tags: music, visuals
-  desc: A music project from 2009-2011, once featured as Stereogum's "Band to Watch"
-  url: /golden_ages
-  img: golden_ages.jpg
-- name: Nito
-  tags: meme cryptography
-  desc: A steganographic tool for encoding and decoding sensitive information into images using “context keys” (i.e. memes and inside jokes)
-  url: /nito
-  img: nito.jpg
-- name: Serve the People
-  tags: music video
-  desc: The video for Handsome Furs' "Serve the People", from their album Sound Kapital (Sub Pop)
-  url: https://vimeo.com/32985899
-  img: serve_the_people.jpg
+selected:
+    - name: matter.farm
+      tags: ai, drugs, chemistry, law
+      desc: A system that algorithmically generates potential new drug compounds for a set of target receptors and estimates their therapeutic use. The generated compounds function as prior art, keeping them in the public domain away from predatory pharmaceutical business practices. W/ Sean Raspet for Rhizome's Seven-on-Seven (2018, Beijing). <a href='https://spaceandtim.es/projects/matter_farm/'>Write-up here</a>
+      url: http://matter.farm
+      img: matter.jpg
+    - name: hyperdocs
+      tags: tool, p2p
+      desc: A proof-of-concept for p2p collaborative text editing using the Dat protocol, so groups can work together without relying on Google. Currently only supports plain text editing; rich text support is experimental/unstable
+      img: hyperdocs.png
+      url: https://github.com/frnsys/hyperdocs/
+    - name: cell.farm
+      tags: blockchain, simulation
+      desc: A whitepaper describing a collective computing project for the atomic simulation of a single human cell and distributing subsequent medical research revenue, w/ Sean Raspet for Rhizome's Seven-on-Seven (2018, NYC)
+      img: cell.png
+      url: http://cell.farm/
+    - name: Transit Demand Simulation
+      tags: transit, simulation
+      desc: A transit demand model for the Institute for Applied Economic Research, part of the PolicySpace model. Simulates public transit and private vehicle usage given a city's GTFS feed and available OpenStreetMap data
+      img: transit.png
+      url: https://github.com/frnsys/transit_demand_model
+    - name: PolicySpace
+      tags: economics, geospatial, simulation
+      desc: An open agent-based model with three markets and a tax scheme that empirically simulates 46 Brazilian metropolitan regions, developed with Bernardo Furtado at the Institute for Applied Economic Research.
+      img: policyspace.png
+      url: http://www.ipea.gov.br/portal/index.php?option=com_content&view=article&id=33132&Itemid=433
+    - name: Bail Bloc
+      tags: crypto, blockchain, abolition
+      desc: A Monero miner for using excess computing power and crypto-speculation to collectively post bail for low-income people, developed with Grayson Earle, Maya Binyam, JB Rubinovitz, Sam Lavigne, Rachel Rosenfelt, Madeleine Varner, Devin Kenny, and the rest of Dark Inquiry. <a href='https://bailbloc.thenewinquiry.com/'>Download here</a>
+      img: bailbloc.png
+      url: https://bailbloc.thenewinquiry.com/
+    - name: Cybernetics Conference
+      tags: conference
+      desc: A conference and library in NYC, 11/18/2017, on cybernetics, informatic systems, and social organization; organized with Sam Hart, Melanie Hoff, Sarah Hamerman, David Isaac Hecht, Dan Taeyoung, Charles Eppley, and Alexis Convento
+      img: cybercon.png
+      url: https://cybernetics.social/
+    - name: White Collar Crime Risk Zones
+      tags: prediction, crime
+      desc: A predictive policing app for white collar crime. "Unlike typical predictive policing apps which criminalize poverty, White Collar Crime Risk Zones criminalizes wealth." Collab w/ Sam Lavigne & Brian Clifton for The New Inquiry
+      url: https://whitecollar.thenewinquiry.com
+      img: wccrz.jpg
+    - name: Speculating Futures
+      tags: reading list
+      desc: A reading list around speculative fiction, technology, and politics
+      url: https://speculatingfutures.club
+      img: speculating_futures.png
+    - name: Humans of Simulated New York
+      tags: simulation
+      desc: A participative agent-based economic simulation for speculating alternative economies, w/ Fei Liu
+      url: /projects/hosny
+      img: hosny.png
+    - name: The Founder
+      tags: video game
+      desc: A dystopian business simulator - found a startup, pursue unbounded growth, and accidentally dystopia. <a href='http://thefounder.biz/play'>Play here</a>
+      url: http://thefounder.biz
+      img: the_founder.png
+    - name: AI Notes
+      tags: notes
+      desc: A large set of notes introducing people with modest math backgrounds to artificial intelligence
+      url: http://frnsys.com/ai_notes/
+      img: ai_notes.jpg
+    - name: Designing Digital Communities
+      tags: notes, teaching
+      desc: Digital community design notes for <a href="https://coralproject.net/">the Coral Project</a> and taught as a New School Journalism+Design course
+      url: http://frnsys.com/coral/
+      img: ddc.jpg
+    - name: News Automata
+      tags: teaching
+      desc: A New School Journalism+Design course on journalism, algorithms, and automation
+      url: http://www.lang.edu/courses/coursedesc.cfm?TERM=201410&ID=7822
+      img: news_automata.png
+    - name: Machine Learning for Artists Guides
+      tags: guides, teaching, machine learning
+      desc: A collection of introductory machine learning guides, w/ Gene Kogan
+      url: http://ml4a.github.io/guides/
+      img: ml4a_guides.jpg
+    - name: Serve the People
+      tags: music video
+      desc: The video for Handsome Furs' "Serve the People", from their album Sound Kapital (Sub Pop)
+      url: https://vimeo.com/32985899
+      img: serve_the_people.jpg
+archive:
+    - name: cartog
+      tags: framework, simulation
+      desc: A Javascipt framework for creating management and system simulation games, developed for my Simulation & Cybernetics class at The New School
+      img: cartog.png
+      url: https://github.com/frnsys/cartog
+    - name: ML101
+      tags: workshop, teaching
+      desc: An introductory workshop to machine learning, around a dystopian sci-fi narrative
+      url: https://github.com/frnsys/ml101
+      img: ml101.jpg
+    - name: saltbeef
+      tags: game
+      desc: A randomly-generated pokemon slack battling system
+      url: https://github.com/frnsys/saltbeef
+      img: saltbeef.png
+    - name: Tao
+      tags: nlp
+      desc: The Tao Te Ching as "interpreted" by a recurrent neural network, trained on 94 English translations
+      url: https://github.com/frnsys/tao/blob/master/machine_tao.txt
+      img: tao.png
+    - name: Pablo
+      tags: algo music
+      desc: It seems like the next Avalanches album is never coming out, so here is a program that will create mix-based music for you
+      url: https://github.com/frnsys/pablo
+      img: pablo.png
+    - name: hscluster
+      tags: algorithm
+      desc: A graph-based clustering approach which does not require specifying the number of clusters
+      url: https://github.com/frnsys/hscluster
+      img: hscluster.png
+    - name: nomadic
+      tags: tool
+      desc: A very lightweight markdown note management platform
+      url: http://spaceandtim.es/projects/nomadic
+      img: nomadic.png
+    - name: port
+      tags: tool
+      desc: A very lightweight markdown blogging platform
+      url: http://spaceandtim.es/projects/port
+      img: port.jpg
+    - name: pasture
+      tags: tool
+      desc: Pasture is a tool for teaching Python without needing to deal with development environments (bleh)
+      url: http://spaceandtim.es/projects/pasture
+      img: pasture.jpg
+    - name: Mob
+      tags: simulation
+      desc: Massive communication - simulated chat rooms of hundreds to thousands of automated participants (Twitch chat simulator)
+      url: https://github.com/frnsys/mob
+      img: mob.jpg
+    - name: Argos
+      tags: nlp
+      desc: Argos (prototype) is an automated system that keeps up with the news for you
+      url: /projects/argos
+      img: argos.png
+    - name: Neuroviz
+      tags: visualization
+      desc: An exploration into translating network topology into VR space, inspired by Neuromancer
+      url: http://spaceandtim.es/projects/neuromancer_network_visualizer
+      img: neuroviz.gif
+    - name: Brain
+      tags: nlp
+      desc: Outsource your social media personality to an algorithm
+      url: /projects/brain
+      img: brain.png
+    - name: Parrott
+      tags: nlp
+      desc: A pseudo-intelligent NLP (naive bayes) bot that learns your (re)tweeting habits
+      url: /projects/parrott
+      img: parrott.jpg
+    - name: Golden Ages
+      tags: music, visuals
+      desc: A music project from 2009-2011, once featured as Stereogum's "Band to Watch"
+      url: /projects/golden_ages
+      img: golden_ages.jpg
+    - name: Nito
+      tags: meme cryptography
+      desc: A steganographic tool for encoding and decoding sensitive information into images using “context keys” (i.e. memes and inside jokes)
+      url: /projects/nito
+      img: nito.jpg
+    - name: Polynomial Designer
+      tags: tool, math
+      desc: Tool for designing equations by drawing them
+      url: https://github.com/frnsys/polynomial_designer
+      img: polynomial_designer.png
+    - name: cess
+      tags: framework, simulation
+      desc: A simple agent-based modeling framework, supporting distributed computation
+      url: https://github.com/frnsys/cess
+      img: cess.png
+    - name: CyberSym
+      tags: simulation, visualization
+      desc: A simulation to interact with the <a href="http://cybernetics.social/">Cybernetics Conference</a> <a href="http://cybernetics.social/library/">Library</a>, w/ Dan Taeyoung
+      img: cybersym.png
+      url: /projects/cybersym
+    - name: Conspiracy Bot
+      tags: machine learning, computer vision, nlp
+      desc: A bot that generates conspiracy theories by watching the news and being oversensitive to patterns (apophenia). For The New Inquiry. <a href="http://spaceandtim.es/projects/conspiracy/">Technical breakdown here</a>
+      url: https://conspiracy.thenewinquiry.com
+      img: conspiracy_bot.png
+    - name: High Rise/Party Fortress
+      tags: tool, simulation
+      desc: Tool for designing social-spatial simulations with an example project. Collab w/ Fei Liu & Dan Taeyoung
+      url: http://spaceandtim.es/projects/party_fortress
+      img: highrise.png

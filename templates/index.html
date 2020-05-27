@@ -54,13 +54,11 @@
     <div>
         <div class="current">
             <img src="/assets/brand.gif" class="brand">
-            Currently {{ meta.currently|join(', ')|safe }}, and freelancing.</div>
+            {{ meta.currently|join(', ')|safe }}.</div>
         <div class="highlight">
             <b>Want to work together?</b>
-            <p><em>Specialties</em>: I design and implement simulations and games, train machine learning models, design and implement procedural and AI systems, develop software &amp; web applications, and build software and automation tools of all kinds.</p>
-            <p><em>Project interests</em>: climate, ecology, agriculture, p2p, autonomy, recycling, materials, voting, transit/mobility, energy, logistics, remote sensing, algorithmic accountability, distributive economics, ... projects which help to establish an equitable and ecological world.</p>
-            <p>If you are an activist organization, I'm usually happy to donate time to help.</p>
-            <p>Contact me at <em>f[at]frnsys.com</em>.</p>
+            <p>I design and implement simulations &amp; games, design and implement procedural &amp; AI systems, develop software &amp; web applications, and build software tools.</p>
+            <p>If you are an activist organization or political publication, I'm usually happy to donate time to help--contact me at <em>f[at]frnsys.com</em>.</p>
         </div>
     </div>
 </div>
@@ -88,7 +86,7 @@
 <section>
     <h1>Work</h1>
     <ul class="projects">
-        {% for p in projects %}
+        {% for p in projects.selected %}
             {{ project(p) }}
         {% endfor %}
     </ul>

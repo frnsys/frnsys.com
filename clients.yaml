@@ -1,3 +1,5 @@
+- name: DOMA
+  url: http://doma.city
 - name: NYU Institute for Public Knowledge
   url: https://ipk.nyu.edu/
 - name: MIT Media Lab
