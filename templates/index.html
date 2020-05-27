@@ -9,10 +9,9 @@
             <div class="item-info">
                 <h1><a href="{{ p.url }}">{{ p.name }}</a></h1>
                 <h2>{{ p.tags }}</h2>
+                <p class="item-desc">{{ p.desc }}</p>
             </div>
         </div>
-        <p class="item-desc">{{ p.desc }}</p>
-        <div class="hover-info"><p>{{ p.desc }}</p></div>
     </li>
 {%- endmacro %}
 

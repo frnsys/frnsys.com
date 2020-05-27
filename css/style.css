@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Noto+Serif+JP:200|Nunito+Sans:400,400i,700,700i&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Noto+Serif+JP:200|Nanum+Gothic&display=swap');
 
 ::-moz-selection { background: #213cff; color: #fff; text-shadow: none; }
 ::selection { background: #213cff; color: #fff; text-shadow: none; }
@@ -13,7 +13,7 @@ html, body {
   background: #fff;
   margin: 0;
   padding: 0;
-  font-family: 'Nunito Sans', sans-serif;
+  font-family: 'Nanum Gothic', sans-serif;
 }
 
 main, header > div {
@@ -44,6 +44,7 @@ section {
 section > h1 {
   font-size: 2em;
   text-decoration: underline;
+  font-family: 'Noto Serif JP', serif;
 }
 
 .item {
@@ -60,7 +61,7 @@ section > h1 {
   text-align: left;
 }
 .item figure {
-  width: 34px;
+  width: 128px;
   position: relative;
   margin: 0;
 }
@@ -127,64 +128,47 @@ section > h1 {
   width: 580px;
   max-width: 100%;
 }
+#writing p {
+  margin-top: 0;
+}
+#writing h2 {
+  margin-bottom: 0.5em;
+}
 
 .projects {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
-  border: 1px solid black;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 .project {
   padding: 1em;
+  margin: 1em auto;
   max-width: 100%;
-  width: auto;
-  border: 1px solid black;
-  flex: 1 0 auto;
+  width: 480px;
+  /* flex: 1 0 auto; */
   cursor: help;
 }
 .project > div {
   display: flex;
 }
-.project .item-desc,
-.project .hover-info {
-  display: none;
-}
-.project .hover-info {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  z-index: 1;
-  background: #000;
-  color: #fff;
-  padding: 1em;
-  margin: 0;
-  border-top: 2px solid black;
-}
-.project .hover-info p {
-  max-width: 620px;
-  margin: 0 auto;
-}
-.project .hover-info a,
-.project .hover-info a:visited {
-  color: #fff;
-}
-.project:hover .hover-info {
-  display: block;
-}
 .project h1 a {
   color: #111;
+  font-family: 'Noto Serif JP', serif;
 }
-.project:hover {
-  background: rgba(194, 198, 255, 0.41);
-}
+/* .project:hover { */
+/*   background: rgba(194, 198, 255, 0.41); */
+/* } */
 .project h2 {
   margin-top: 0.2em;
+  margin-bottom: 0;
   text-align: left;
 }
 
 .client {
   margin-bottom: 1em;
+  font-family: 'Noto Serif JP', serif;
 }
 .client a:visited,
 .client h1:hover a {
@@ -247,6 +231,7 @@ article h1 {
   font-size: 1.6em;
   text-align: left;
   margin-bottom: 0;
+  font-family: 'Noto Serif JP', serif;
 }
 article h1 a, h1 a:visited {
   color: #111;
@@ -273,6 +258,7 @@ article h2 {
 }
 .current {
   font-size: 2.2em;
+  font-family: 'Noto Serif JP', serif;
 }
 .current img {
   vertical-align: middle;
@@ -282,6 +268,7 @@ article h2 {
 .previously li {
   margin-bottom: 0.75em;
   font-size: 1.2em;
+  font-family: 'Noto Serif JP', serif;
 }
 .highlight {
   padding: 1em 1em 0.5em 1em;
