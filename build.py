@@ -62,8 +62,8 @@ if __name__ == '__main__':
         templ = env.get_template('project.html')
         html = templ.render(meta=meta, html=html)
 
-        outdir = os.path.join(BUILD_DIR, fname)
-        os.mkdir(outdir)
+        outdir = os.path.join(BUILD_DIR, 'projects', fname)
+        os.makedirs(outdir)
         with open(os.path.join(outdir, 'index.html'), 'w') as f:
             f.write(html)
 
